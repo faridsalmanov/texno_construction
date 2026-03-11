@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "title": "TEXNO CONSTRUCTION AZ MMC | Peşəkar Tikinti-Quraşdırma Xidmətləri",
+    "description": "Azərbaycanda etibarlı və keyfiyyətli tikinti-quraşdırma xidmətləri. Yaşayış, inzibati, sənaye və kommersiya layihələri üzrə peşəkar."
+  },
+  "nav": {
+    "home": "Ana Səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "projects": "Layihələr",
+    "contact": "Əlaqə"
+  },
+  "hero": {
+    "stats_years": "İllik Təcrübə",
+    "stats_projects": "PMD, TOPLAN",
+    "stats_license": "Lisenziya 2024",
+    "stats_founded": "Təsis ili",
+    "title": "Güvənilir Tikinti Tərəfdaşınız",
+    "subtitle": "Peşəkar tikinti-quraşdırma xidmətləri, müasir texnologiyalar və innovativ həllər. Layihələrinizi təhlükəsiz, yüksək keyfiyyətlə və vaxtında həyata keçiririk.",
+    "cta": "Bizimlə Əlaqə",
+    "secondary_cta": "Layihələrimiz"
+  },
+  "services": {
+    "title": "Xidmətlərimiz",
+    "main_title": "Əsas Xidmətlərimiz",
+    "see_all_services": "Bütün Xidmətləri Gör",
+    "subtitle": "\"TEXNO CONSTRUCTION AZ\" MMC olaraq tikinti-quraşdırma sahəsində peşəkar yanaşma, müasir texnologiyalar və innovativ həllər əsasında fəaliyyət göstəririk",
+    "main_construction": {
+      "title": "Əsaslı tikinti-quraşdırma işləri",
+      "description": "Yaşayış, inzibati, sənaye və kommersiya obyektlərinin tikintisi və quraşdırılması işlərini layihə tələblərinə və mövcud standartlara uyğun şəkildə həyata keçiririk."
+    },
+    "renovation": {
+      "title": "Təmir və yenidənqurma işləri",
+      "description": "Mövcud obyektlərin əsaslı təmiri, rekonstruksiyası və funksional təkmilləşdirilməsi üzrə peşəkar həllər təqdim edirik."
+    },
+    "engineering_systems": {
+      "title": "Mühəndis-kommunikasiya sistemləri",
+      "description": "Elektrik, su-kanalizasiya, istilik, havalandırma və digər mühəndis sistemlərinin quraşdırılması və texniki təminatı."
+    },
+    "it_supply": {
+      "title": "İT avadanlıqlarının təchizatı və proqram təminatı",
+      "description": "Müasir İT avadanlıqlarının təchizatı, quraşdırılması və proqram təminatının tətbiqi üzrə kompleks xidmətlər."
+    },
+    "materials_supply": {
+      "title": "Tikinti materiallarının və avadanlıqların təchizatı",
+      "description": "Keyfiyyətli və sertifikatlaşdırılmış tikinti materiallarının, texniki avadanlıqların təchizatı və logistikasının təşkili."
+    },
+    "project_management": {
+      "title": "Layihələrin idarə olunması",
+      "description": "Tikinti proseslərinin planlaşdırılması, koordinasiyası, nəzarəti və vaxtında icrasının təmin edilməsi."
+    },
+    "features": {
+      "main_construction": {
+        "items": [
+          "Yaşayış obyektləri",
+          "İnzibati binalar",
+          "Sənaye obyektləri",
+          "Kommersiya obyektləri",
+          "Layihə tələblərinə uyğun icra"
+        ]
+      },
+      "renovation": {
+        "items": [
+          "Əsaslı təmir",
+          "Rekonstruksiya",
+          "Funksional təkmilləşdirmə",
+          "Daxili təmir",
+          "Fasad yeniləmə"
+        ]
+      },
+      "engineering_systems": {
+        "items": [
+          "Elektrik sistemləri",
+          "Su-kanalizasiya",
+          "İstilik",
+          "Havalandırma",
+          "Digər mühəndis sistemləri"
+        ]
+      },
+      "it_supply": {
+        "items": [
+          "İT avadanlıqlarının təchizatı",
+          "Quraşdırma",
+          "Proqram təminatının tətbiqi",
+          "Texniki dəstək",
+          "Müasir həllər"
+        ]
+      },
+      "materials_supply": {
+        "items": [
+          "Tikinti materialları",
+          "Texniki avadanlıqlar",
+          "Sertifikatlaşdırılmış məhsullar",
+          "Logistika təşkili",
+          "Keyfiyyətli təchizat"
+        ]
+      },
+      "project_management": {
+        "items": [
+          "Planlaşdırma",
+          "Koordinasiya",
+          "Nəzarət",
+          "Vaxtında icra",
+          "Layihə idarəetməsi"
+        ]
+      }
+    },
+    "process_title": "İş Prosesimiz",
+    "process_subtitle": "Layihənizin uğurla həyata keçirilməsi üçün izlədiyimiz addımlar",
+    "process_steps": [
+      {
+        "step": "01",
+        "title": "Məsləhət",
+        "desc": "Ehtiyaclarınızı öyrənirik"
+      },
+      {
+        "step": "02",
+        "title": "Planlaşdırma",
+        "desc": "Detallı plan hazırlayırıq"
+      },
+      {
+        "step": "03",
+        "title": "İcra",
+        "desc": "Layihəni həyata keçiririk"
+      },
+      {
+        "step": "04",
+        "title": "Təhvil",
+        "desc": "Keyfiyyəti təmin edirik"
+      }
+    ]
+  },
+  "about": {
+    "title": "Haqqımızda",
+    "subtitle": "2013-cü ildən etibarlı tikinti-quraşdırma xidmətləri",
+    "description": "\"TEXNO CONSTRUCTION AZ\" MMC 26 iyul 2013-cü il tarixində təsis edilmişdir. Şirkət fəaliyyətini müvafiq lisenziya əsasında həyata keçirir. Tikinti-quraşdırma sahəsi üzrə lisenziya 22 may 2024-cü il tarixində verilmişdir (Lisenziya № EL-425/2024). \"TEXNO CONSTRUCTION AZ\" MMC əsaslı tikinti-quraşdırma sahəsində bütün növ xidmətlər göstərən peşəkar şirkətdir.",
+    "experience": "İllik Təcrübə",
+    "services": "Xidmətlər",
+    "projects": "Tamamlanmış Layihə",
+    "clients": "Məmnun Müştəri",
+    "team": "Peşəkar İşçi",
+    "feature_license": "Lisenziya № EL-425/2024 tikinti-quraşdırma üzrə",
+    "feature_team": "Geniş təcrübəyə malik mühəndis və texniki heyəti",
+    "feature_tech": "Müasir texnologiyalar və innovativ yanaşmalar",
+    "feature_delivery": "Təhlükəsiz, yüksək keyfiyyətli və vaxtında təhvil",
+    "feature_portfolio": "Şirkətin portfelinə dövlət obyektləri ilə yanaşı, özəl layihələr də daxildir",
+    "feature_weps": "Qadınların gücləndirilməsi və gender bərabərliyi (WEPs) öhdəliyimiz",
+    "story_title": "Bizim Hekayəmiz",
+    "story_paragraph": "Qısa müddət ərzində şirkətimiz tikinti sektorunda nüfuzlu və etibarlı şirkətlərdən birinə çevrilmişdir. Bu uğur əsasən innovativ yanaşmaların tətbiqi, peşəkar kollektivin zəhməti və rəqabətədavamlı fəaliyyət strategiyamız sayəsində əldə olunmuşdur. Layihələrin təhlükəsiz, yüksək keyfiyyətlə və müəyyən olunmuş vaxt çərçivəsində icra edilməsi müştərilərimizin bizə olan etimadını daha da gücləndirir.",
+    "mission_title": "Bizim Missiyamız",
+    "mission_p1": "\"TEXNO CONSTRUCTION AZ\" MMC yarandığı gündən inanır ki, iqtisadi və texniki inkişaf yalnız layihələrin icrası ilə məhdudlaşmamalı, eyni zamanda cəmiyyətin sosial dəyərləri, təhlükəsizlik mədəniyyəti və davamlı inkişaf prinsipləri ilə uzlaşmalıdır.",
+    "mission_p2": "Biz tikinti-quraşdırma və təchizat sahəsində həyata keçirdiyimiz layihələrdə müasir texnologiyalardan, innovativ yanaşmalardan və peşəkar idarəetmədən istifadə edərək etibarlı, keyfiyyətli və uzunmüddətli dəyər yaradırıq. Şirkət olaraq məqsədimiz təhlükəsiz, funksional və yüksək standartlara cavab verən obyektlər inşa etməklə ölkəmizin infrastruktur inkişafına töhfə vermək və bu dəyərləri gələcək nəsillərə ötürməkdir.",
+    "values_title": "Əsas Prinsiplərimiz",
+    "values_subtitle": "Uğurumuzun əsasını təşkil edən dəyərlər",
+    "values": [
+      {
+        "title": "Texniki təhlükəsizlik",
+        "description": "İş proseslərinin bütün mərhələlərində əməkdaşların və obyektlərin təhlükəsizliyini əsas prioritet hesab edirik."
+      },
+      {
+        "title": "Keyfiyyət",
+        "description": "Keyfiyyət bizim üçün fəaliyyətin əsas prinsipidir və bazarda etibarlı mövqe qazanmağımızın əsas səbəbidir."
+      },
+      {
+        "title": "Peşəkarlıq",
+        "description": "Verdiyimiz öhdəliklərə daim sadiq qalır, layihələri vaxtında və qüsursuz şəkildə təhvil veririk. Yüksək ixtisaslı mühəndis və texniki heyətlə layihələri beynəlxalq standartlara uyğun icra edirik."
+      }
+    ],
+    "features": [
+      "11+ il təcrübə",
+      "Şirkətin portfelinə dövlət obyektləri ilə yanaşı, bir sıra özəl layihələr də daxildir",
+      "100+ müştəri",
+      "Geniş təcrübəyə malik mühəndis və usta heyəti"
+    ]
+  },
+  "partners": {
+    "badge": "Tərəfdaşlarımız",
+    "title": "Tərəfdaşlarımız"
+  },
+  "projects": {
+    "title": "Layihələrimiz",
+    "subtitle": "Uğurla həyata keçirdiyimiz layihələrdən nümunələr",
+    "view_all": "Bütün Layihələri Gör",
+    "view_details": "Ətraflı Bax",
+    "categories": {
+      "international": "Beynəlxalq",
+      "commercial": "Kommersiya",
+      "construction": "Tikinti"
+    },
+    "items": [
+      {
+        "id": 1,
+        "image": "cop29",
+        "category": "Beynəlxalq",
+        "title": "COP29",
+        "location": "Bakı",
+        "year": "2024",
+        "description": "Beynəlxalq iqlim konfransı layihəsi"
+      },
+      {
+        "id": 2,
+        "image": "pmd",
+        "category": "Kommersiya",
+        "title": "PMD PROJECTS",
+        "location": "Bakı",
+        "year": "2024",
+        "description": "Peşəkar tikinti-quraşdırma layihəsi"
+      },
+      {
+        "id": 3,
+        "image": "toplan",
+        "category": "Tikinti",
+        "title": "TOPLAN",
+        "location": "Bakı",
+        "year": "2024",
+        "description": "Tikinti-quraşdırma layihəsi"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Layihəniz Üçün Bizimlə Əlaqə Saxlayın",
+    "subtitle": "Bizimlə əlaqə saxlayaraq layihələriniz üçün peşəkar və etibarlı tikinti həlləri əldə edə bilərsiniz. Komandamız müraciətlərinizi operativ şəkildə cavablandırmağa hazırdır.",
+    "button": "Bizimlə Əlaqə"
+  },
+  "contact": {
+    "title": "Əlaqə",
+    "subtitle": "Bizimlə əlaqə saxlayın",
+    "address": "Ünvan",
+    "phone": "Telefon",
+    "email": "E-poçt",
+    "hours": "İş Saatları",
+    "hours_value": "Bazar ertəsi – Cümə | 09:00 – 18:00",
+    "form_title": "Mesaj Göndərin",
+    "form_name": "Ad Soyad *",
+    "form_phone": "Telefon *",
+    "form_email": "E-poçt *",
+    "form_subject": "Mövzu",
+    "form_message": "Mesaj *",
+    "form_submit": "Göndər",
+    "form_placeholder_name": "Adınız",
+    "form_placeholder_phone": "+994 XX XXX XX XX",
+    "form_placeholder_email": "email@example.com",
+    "form_placeholder_message": "Mesajınızı yazın...",
+    "form_subject_placeholder": "Mövzu seçin",
+    "form_subject_options": {
+      "residential": "Yaşayış tikintisi",
+      "commercial": "Kommersiya tikintisi",
+      "renovation": "Təmir işləri",
+      "consultation": "Məsləhət",
+      "other": "Digər"
+    },
+    "info_title": "Əlaqə Məlumatları"
+  },
+  "footer": {
+    "description": "TEXNO CONSTRUCTION AZ MMC – peşəkar tikinti-quraşdırma xidmətləri ilə layihələrinizi həyata keçiririk.",
+    "quick_links": "Sürətli Keçidlər",
+    "contact_info": "Əlaqə Məlumatı",
+    "follow_us": "Bizi İzləyin",
+    "copyright": "© 2026 TEXNO CONSTRUCTION AZ MMC. Bütün hüquqlar qorunur.",
+    "company_short": "Layihələr",
+    "all_rights": "Bütün hüquqlar qorunur",
+    "developed_by": "NOVA tərəfindən hazırlanıb",
+    "address_value": "Bakı, Azərbaycan",
+    "social_linkedin": "LinkedIn",
+    "social_instagram": "Instagram",
+    "social_youtube": "YouTube",
+    "social_facebook": "Facebook"
+  },
+  "notFound": {
+    "title": "Səhifə Tapılmadı",
+    "description": "Axtardığınız səhifə mövcud deyil və ya köçürülüb. Ana səhifəyə qayıdın.",
+    "home": "Ana Səhifə",
+    "back": "Geri Qayıt"
+  },
+  "loading": {
+    "text": "Yüklənir..."
+  }
+}

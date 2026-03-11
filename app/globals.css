@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
 :root {
+  /* Construction Theme Colors */
+  --primary: #1e3a5f;
+  --primary-dark: #152a45;
+  --primary-light: #2d5a8a;
+  --secondary: #f59e0b;
+  --secondary-dark: #d97706;
+  --secondary-light: #fbbf24;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e293b;
+  --muted: #64748b;
+  --muted-light: #94a3b8;
+  --border: #e2e8f0;
+  --card: #f8fafc;
+  /* Hero & Footer - cohesive dark palette */
+  --hero-dark: #0f172a;
+  --hero-mid: #1e293b;
+  --footer-bg: #0c1222;
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary-light: var(--secondary-light);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-muted-light: var(--muted-light);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-hero-dark: var(--hero-dark);
+  --color-hero-mid: var(--hero-mid);
+  --color-footer-bg: var(--footer-bg);
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar globally - placed at end to override other styles */
+:root,
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+:root::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Hide scrollbar for horizontal carousels */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Partners infinite scroll */
+@keyframes partners-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1104px);
+  }
+}
+.animate-partners-scroll {
+  animation: partners-scroll 25s linear infinite;
 }

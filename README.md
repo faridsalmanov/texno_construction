@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Construction Website
+
+A modern, professional construction company website built with Next.js 16, Tailwind CSS, and TypeScript. Features multi-language support (Azerbaijani, English, Russian) and beautiful animations.
+
+## Tech Stack
+
+- **Framework:** Next.js 16+ (App Router)
+- **Styling:** Tailwind CSS 4
+- **Language:** TypeScript
+- **i18n:** next-intl
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+
+## Features
+
+- Multi-language support (AZ, EN, RU)
+- Responsive design for all devices
+- Modern UI with smooth animations
+- SEO optimized
+- Fast page loads with Next.js App Router
+- Professional construction company design
+
+## Pages
+
+- **Home** - Hero section, services overview, projects, testimonials, CTA
+- **About** - Company history, values, timeline
+- **Services** - Detailed service offerings
+- **Projects** - Project portfolio with filtering
+- **Contact** - Contact form and information
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn
+
+### Installation
 
 ```bash
+# Navigate to project directory
+cd construction-website
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+construction-website/
+├── app/
+│   ├── [locale]/          # Locale-based routing
+│   │   ├── about/
+│   │   ├── contact/
+│   │   ├── projects/
+│   │   ├── services/
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── globals.css
+│   └── layout.tsx
+├── components/
+│   ├── layout/            # Header, Footer, Navbar
+│   ├── sections/          # Hero, Services, Projects, etc.
+│   └── ui/                # Button, Card, Container
+├── i18n/                  # Internationalization config
+├── messages/              # Translation files (az, en, ru)
+├── lib/                   # Utility functions
+└── public/                # Static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Colors
 
-## Deploy on Vercel
+Edit the CSS variables in `app/globals.css`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```css
+:root {
+  --primary: #1e3a5f;      /* Deep Blue */
+  --secondary: #f59e0b;    /* Orange/Amber */
+  /* ... other colors */
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Translations
+
+Edit the translation files in `messages/`:
+- `az.json` - Azerbaijani
+- `en.json` - English
+- `ru.json` - Russian
+
+### Company Information
+
+Update contact details in:
+- `components/layout/Footer.tsx`
+- `app/[locale]/contact/page.tsx`
+- Translation files
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push code to GitHub
+2. Connect to Vercel
+3. Deploy automatically
+
+Vercel offers a generous free tier perfect for this type of website.
+
+### Other Platforms
+
+The site can be deployed to any platform supporting Node.js:
+- Netlify
+- Railway
+- DigitalOcean App Platform
+
+## License
+
+MIT License
+
+---
+
+Built with Next.js and Tailwind CSS

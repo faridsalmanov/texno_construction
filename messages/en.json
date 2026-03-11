@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "title": "TEXNO CONSTRUCTION AZ MMC | Professional Construction Services",
+    "description": "Reliable and quality construction and installation services in Azerbaijan. Expert in residential, administrative, industrial and commercial projects."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "stats_years": "Years Experience",
+    "stats_projects": "PMD, TOPLAN",
+    "stats_license": "License 2024",
+    "stats_founded": "Founded",
+    "title": "Your Trusted Construction Partner",
+    "subtitle": "Professional construction and installation services, modern technologies and innovative solutions. We execute your projects safely, with high quality and on time.",
+    "cta": "Free Consultation",
+    "secondary_cta": "Our Projects"
+  },
+  "services": {
+    "title": "Our Services",
+    "main_title": "Main Services",
+    "see_all_services": "See All Services",
+    "subtitle": "We operate on the basis of professional approach, modern technologies and innovative solutions in the construction and installation sector",
+    "main_construction": {
+      "title": "Main construction and installation works",
+      "description": "Construction and installation of residential, administrative, industrial and commercial facilities in accordance with project requirements and existing standards."
+    },
+    "renovation": {
+      "title": "Repair and reconstruction works",
+      "description": "Professional solutions for major repairs, reconstruction and functional improvement of existing facilities."
+    },
+    "engineering_systems": {
+      "title": "Engineering and communication systems",
+      "description": "Installation and technical support of electrical, water-sewage, heating, ventilation and other engineering systems."
+    },
+    "it_supply": {
+      "title": "IT equipment supply and software",
+      "description": "Comprehensive services for supply, installation and implementation of modern IT equipment and software."
+    },
+    "materials_supply": {
+      "title": "Construction materials and equipment supply",
+      "description": "Supply and logistics of quality and certified construction materials and technical equipment."
+    },
+    "project_management": {
+      "title": "Project management",
+      "description": "Planning, coordination, control and timely execution of construction processes."
+    },
+    "features": {
+      "main_construction": {
+        "items": [
+          "Residential buildings",
+          "Administrative buildings",
+          "Industrial facilities",
+          "Commercial facilities",
+          "Execution according to project requirements"
+        ]
+      },
+      "renovation": {
+        "items": [
+          "Major renovation",
+          "Reconstruction",
+          "Functional improvement",
+          "Interior renovation",
+          "Facade renewal"
+        ]
+      },
+      "engineering_systems": {
+        "items": [
+          "Electrical systems",
+          "Water and sewage",
+          "Heating",
+          "Ventilation",
+          "Other engineering systems"
+        ]
+      },
+      "it_supply": {
+        "items": [
+          "Supply of IT equipment",
+          "Installation",
+          "Software implementation",
+          "Technical support",
+          "Modern solutions"
+        ]
+      },
+      "materials_supply": {
+        "items": [
+          "Construction materials",
+          "Technical equipment",
+          "Certified products",
+          "Logistics organization",
+          "Quality supply"
+        ]
+      },
+      "project_management": {
+        "items": [
+          "Planning",
+          "Coordination",
+          "Control",
+          "Timely execution",
+          "Project management"
+        ]
+      }
+    },
+    "process_title": "Our Process",
+    "process_subtitle": "The steps we follow to successfully deliver your project",
+    "process_steps": [
+      {
+        "step": "01",
+        "title": "Consultation",
+        "desc": "We analyse your needs"
+      },
+      {
+        "step": "02",
+        "title": "Planning",
+        "desc": "We prepare a detailed plan"
+      },
+      {
+        "step": "03",
+        "title": "Execution",
+        "desc": "We implement the project"
+      },
+      {
+        "step": "04",
+        "title": "Handover",
+        "desc": "We ensure quality and delivery"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Reliable construction and installation services since 2013",
+    "description": "\"TEXNO CONSTRUCTION AZ\" MMC was established on July 26, 2013. The company operates under the appropriate license. The construction and installation license was issued on May 22, 2024 (License No. EL-425/2024). \"TEXNO CONSTRUCTION AZ\" MMC is a professional company providing all types of services in the construction and installation sector.",
+    "experience": "Years Experience",
+    "services": "Services",
+    "projects": "Projects Completed",
+    "clients": "Happy Clients",
+    "team": "Professional Workers",
+    "feature_license": "License No. EL-425/2024 for construction and installation",
+    "feature_team": "Engineering and technical team with extensive experience",
+    "feature_tech": "Modern technologies and innovative approaches",
+    "feature_delivery": "Safe, high-quality and timely delivery",
+    "feature_portfolio": "Company portfolio includes state facilities as well as a number of private projects",
+    "feature_weps": "Commitment to women's empowerment and gender equality (WEPs)",
+    "story_title": "Our Story",
+    "story_paragraph": "In a short period, our company has become one of the reputable and trusted companies in the construction sector. This success has been achieved mainly through the application of innovative approaches, the dedication of our professional team, and our competitive business strategy. Executing projects safely, with high quality and within the set timeframe strengthens our clients' trust in us.",
+    "mission_title": "Our Mission",
+    "mission_p1": "\"TEXNO CONSTRUCTION AZ\" MMC has believed since its inception that economic and technical development should not be limited to project execution alone, but must also align with society's social values, safety culture, and sustainable development principles.",
+    "mission_p2": "Using modern technologies, innovative approaches, and professional management in the projects we implement in the construction, installation, and supply sector, we create reliable, high-quality, and long-term value. As a company, our goal is to contribute to our country's infrastructure development by building safe, functional, and high-standard facilities, and to pass these values on to future generations.",
+    "values_title": "Our Core Principles",
+    "values_subtitle": "The values that form the foundation of our success",
+    "values": [
+      {
+        "title": "Technical Safety",
+        "description": "We consider the safety of employees and facilities at all stages of work processes as our top priority."
+      },
+      {
+        "title": "Quality",
+        "description": "Quality is the fundamental principle of our operations and the main reason for our trusted position in the market."
+      },
+      {
+        "title": "Professionalism",
+        "description": "We remain committed to our obligations and deliver projects on time and flawlessly. With our highly qualified engineering and technical team, we execute projects in accordance with international standards."
+      }
+    ],
+    "features": [
+      "11+ years of experience",
+      "Company portfolio includes state facilities as well as a number of private projects",
+      "100+ customers",
+      "Engineering and craftsman team with extensive experience"
+    ]
+  },
+  "partners": {
+    "badge": "Trusted by",
+    "title": "Our Partners"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Examples of our successfully completed projects",
+    "view_all": "View All Projects",
+    "view_details": "View Details"
+  },
+  "cta": {
+    "title": "Contact Us For Your Project",
+    "subtitle": "Contact us to get professional and reliable construction solutions for your projects. Our team is ready to respond to your inquiries promptly.",
+    "button": "Contact Us"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Working Hours",
+    "hours_value": "Monday – Friday | 09:00 – 18:00",
+    "form_title": "Send Message",
+    "form_name": "Full Name *",
+    "form_phone": "Phone *",
+    "form_email": "Email *",
+    "form_subject": "Subject",
+    "form_message": "Message *",
+    "form_submit": "Send",
+    "form_placeholder_name": "Your name",
+    "form_placeholder_phone": "+994 XX XXX XX XX",
+    "form_placeholder_email": "email@example.com",
+    "form_placeholder_message": "Write your message...",
+    "form_subject_placeholder": "Select subject",
+    "form_subject_options": {
+      "residential": "Residential construction",
+      "commercial": "Commercial construction",
+      "renovation": "Renovation works",
+      "consultation": "Consultation",
+      "other": "Other"
+    },
+    "info_title": "Contact Information"
+  },
+  "footer": {
+    "description": "TEXNO CONSTRUCTION AZ MMC – implementing your projects with professional construction and installation services.",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Info",
+    "follow_us": "Follow Us",
+    "copyright": "© 2026 TEXNO CONSTRUCTION AZ MMC. All rights reserved.",
+    "company_short": "Projects",
+    "all_rights": "All rights reserved",
+    "developed_by": "Developed by NOVA"
+  }
+}
