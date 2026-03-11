@@ -109,23 +109,6 @@ Update contact details in:
 - `app/[locale]/contact/page.tsx`
 - Translation files
 
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push code to GitHub
-2. Connect to Vercel
-3. Deploy automatically
-
-Vercel offers a generous free tier perfect for this type of website.
-
-### Other Platforms
-
-The site can be deployed to any platform supporting Node.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-
 ## License
 
 MIT License
