@@ -10,7 +10,6 @@ import azerisiq from "@/lib/assets/partners/azerisiq.jpeg";
 import bakuMediaCenter from "@/lib/assets/partners/baku media center.jpg";
 import fuga from "@/lib/assets/partners/fuga.png";
 import azerelektrik from "@/lib/assets/partners/azerelektrik.png";
-import conceptHouse from "@/lib/assets/partners/concept house.png";
 
 const LOGO_WIDTH = 120;
 const LOGO_HEIGHT = 80;
@@ -24,7 +23,6 @@ const partners = [
   { id: 3, logo: bakuMediaCenter, name: "Baku Media Center" },
   { id: 4, logo: fuga, name: "Fuga" },
   { id: 5, logo: azerelektrik, name: "Azerelektrik" },
-  { id: 6, logo: conceptHouse, name: "Concept House" },
 ];
 
 function PartnerLogo({

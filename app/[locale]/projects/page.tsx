@@ -1,28 +1,23 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { CTA } from "@/components/sections/CTA";
+import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProjectDetailModal } from "@/components/projects/ProjectDetailModal";
 import type { ReactNode } from "react";
+import type { ProjectCardData } from "@/components/projects/ProjectCard";
 
 import cop29Image from "@/lib/assets/projects/cop29.jpeg";
 import toplanImage from "@/lib/assets/projects/toplan.jpeg";
 import zeferImage from "@/lib/assets/projects/zefer.png";
 
-type Project = {
-  id: number;
-  image: string;
-  category: string;
-  title: string;
-  location: string;
-  year: string;
-  description: string;
-};
+const PLACEHOLDER_IMAGE = (w: number, h: number, text: string) =>
+  `https://placehold.co/${w}x${h}/1e3a5f/ffffff?text=${encodeURIComponent(text)}`;
 
-const projects: Project[] = [
+const projects: ProjectCardData[] = [
   {
     id: 1,
     image: cop29Image.src,
@@ -31,6 +26,13 @@ const projects: Project[] = [
     location: "Bakı",
     year: "2024",
     description: "Beynəlxalq iqlim konfransı layihəsi",
+    extendedDescription:
+      "[Placeholder – Extended description for COP29 project. Add full project overview, scope of work, key achievements, timeline, and any notable details. This text will be displayed on hover and in the detail modal.]",
+    galleryImages: [
+      cop29Image.src,
+      PLACEHOLDER_IMAGE(800, 600, "COP29 - Image 2"),
+      PLACEHOLDER_IMAGE(800, 600, "COP29 - Image 3"),
+    ],
   },
   {
     id: 2,
@@ -40,6 +42,13 @@ const projects: Project[] = [
     location: "Bakı",
     year: "2024",
     description: "Peşəkar tikinti-quraşdırma layihəsi",
+    extendedDescription:
+      "[Placeholder – Extended description for PMD PROJECTS. Add full project overview, scope of work, key achievements, timeline, and any notable details. This text will be displayed on hover and in the detail modal.]",
+    galleryImages: [
+      zeferImage.src,
+      PLACEHOLDER_IMAGE(800, 600, "PMD - Image 2"),
+      PLACEHOLDER_IMAGE(800, 600, "PMD - Image 3"),
+    ],
   },
   {
     id: 3,
@@ -49,11 +58,20 @@ const projects: Project[] = [
     location: "Bakı",
     year: "2024",
     description: "Tikinti-quraşdırma layihəsi",
+    extendedDescription:
+      "[Placeholder – Extended description for TOPLAN project. Add full project overview, scope of work, key achievements, timeline, and any notable details. This text will be displayed on hover and in the detail modal.]",
+    galleryImages: [
+      toplanImage.src,
+      PLACEHOLDER_IMAGE(800, 600, "TOPLAN - Image 2"),
+      PLACEHOLDER_IMAGE(800, 600, "TOPLAN - Image 3"),
+    ],
   },
 ];
 
 export default function ProjectsPage(): ReactNode {
   const t = useTranslations("projects");
+  const [selectedProject, setSelectedProject] =
+    useState<ProjectCardData | null>(null);
 
   return (
     <main>
@@ -79,44 +97,28 @@ export default function ProjectsPage(): ReactNode {
         <Container>
           <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card className="group cursor-pointer h-full">
-                    <div className="relative h-64 overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold text-foreground mb-3">
-                        {project.title}
-                      </h3>
-                      <div className="flex items-center gap-4 text-muted text-sm">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          {project.location}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          {project.year}
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProjectCard
+                  project={project}
+                  onClick={() => setSelectedProject(project)}
+                />
+              </motion.div>
+            ))}
           </motion.div>
         </Container>
       </section>
+
+      <ProjectDetailModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
 
       <CTA />
     </main>
