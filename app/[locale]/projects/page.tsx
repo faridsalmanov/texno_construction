@@ -27,87 +27,124 @@ import bakuoliveImage from "@/lib/assets/projects/bakuolive.png";
 
 type TWithValues = (key: string, values?: Record<string, string>) => string;
 
-function useProjects(t: TWithValues): ProjectCardData[] {
+type ProjectsData = {
+  projects: ProjectCardData[];
+  works: ProjectCardData[];
+};
+
+function useActivitiesData(t: TWithValues): ProjectsData {
   return useMemo(
-    () => [
-      {
-        id: 1,
-        image: cop29Image.src,
-        category: t("categories.international"),
-        title: t("title_with_format", { name: "COP29" }),
-        location: "Bakı",
-        year: "2024",
-        description: t("descriptions.cop29_short"),
-        extendedDescription: t("extended.cop29"),
-        galleryImages: [cop29Image.src, cop29Photo.src],
-      },
-      {
-        id: 2,
-        image: zeferImage.src,
-        category: t("categories.commercial"),
-        title: t("title_with_format", { name: "Zəfər muzeyi" }),
-        location: "Bakı",
-        year: "2024",
-        description: t("descriptions.pmd_short"),
-        extendedDescription: t("extended.pmd"),
-        galleryImages: [
-          zeferImage.src,
-          zeferMuzey.src,
-          zeferMuzey2.src,
-        ],
-      },
-      {
-        id: 3,
-        image: toplanImage.src,
-        category: t("categories.construction"),
-        title: t("title_with_format", { name: "Toplan" }),
-        location: "Bakı",
-        year: "2024",
-        description: t("descriptions.toplan_short"),
-        extendedDescription: t("extended.toplan"),
-        galleryImages: [toplanImage.src, toplanImagePng.src],
-      },
-      {
-        id: 4,
-        image: azerisiqImage1.src,
-        category: t("categories.commercial"),
-        title: t("title_with_format", { name: "Azərişıq" }),
-        location: "Bakı",
-        year: "2024",
-        description: t("descriptions.azerisiq_short"),
-        extendedDescription: t("extended.azerisiq"),
-        galleryImages: [azerisiqImage1.src, azerisiqImage.src],
-      },
-      {
-        id: 5,
-        image: mediaCenterImage.src,
-        category: t("categories.commercial"),
-        title: t("title_with_format", { name: "Baku Media Center" }),
-        location: "Bakı",
-        year: "2024",
-        description: t("descriptions.media_center_short"),
-        extendedDescription: t("extended.media_center"),
-        galleryImages: [mediaCenterImage.src, mediacenterImage.src],
-      },
-      {
-        id: 6,
-        image: olivegardenImage.src,
-        category: t("categories.commercial"),
-        title: t("title_with_format", { name: t("names.absheron_olive_garden") }),
-        location: "Bakı",
-        year: "2024",
-        description: t("descriptions.olive_garden_short"),
-        extendedDescription: t("extended.olive_garden"),
-        galleryImages: [olivegardenImage.src, oliveImage.src, bakuoliveImage.src],
-      },
-    ],
+    () => ({
+      projects: [
+        {
+          id: 1,
+          image: cop29Image.src,
+          category: t("categories.international"),
+          title: t("names.cop29"),
+          location: "Bakı",
+          year: "2024",
+          description: t("descriptions.cop29_short"),
+          extendedDescription: t("extended.cop29"),
+          galleryImages: [cop29Image.src, cop29Photo.src],
+        },
+        {
+          id: 2,
+          image: zeferImage.src,
+          category: t("categories.commercial"),
+          title: t("names.zefer_muzeyi"),
+          location: "Bakı",
+          year: "2024",
+          description: t("descriptions.pmd_short"),
+          extendedDescription: t("extended.pmd"),
+          galleryImages: [
+            zeferImage.src,
+            zeferMuzey.src,
+            zeferMuzey2.src,
+          ],
+        },
+        {
+          id: 3,
+          image: toplanImage.src,
+          category: t("categories.construction"),
+          title: t("names.toplan"),
+          location: "Bakı",
+          year: "2024",
+          description: t("descriptions.toplan_short"),
+          extendedDescription: t("extended.toplan"),
+          galleryImages: [toplanImage.src, toplanImagePng.src],
+        },
+      ],
+      works: [
+        {
+          id: 4,
+          image: mediaCenterImage.src,
+          category: t("categories.commercial"),
+          title: t("names.baku_media_center"),
+          location: "Bakı",
+          year: "2024",
+          description: t("descriptions.media_center_short"),
+          extendedDescription: t("extended.media_center"),
+          galleryImages: [mediaCenterImage.src, mediacenterImage.src],
+        },
+        {
+          id: 5,
+          image: azerisiqImage1.src,
+          category: t("categories.commercial"),
+          title: t("names.azerisiq"),
+          location: "Bakı",
+          year: "2024",
+          description: t("descriptions.azerisiq_short"),
+          extendedDescription: t("extended.azerisiq"),
+          galleryImages: [azerisiqImage1.src, azerisiqImage.src],
+        },
+        {
+          id: 6,
+          image: olivegardenImage.src,
+          category: t("categories.commercial"),
+          title: t("names.absheron_olive_garden"),
+          location: "Bakı",
+          year: "2024",
+          description: t("descriptions.olive_garden_short"),
+          extendedDescription: t("extended.olive_garden"),
+          galleryImages: [olivegardenImage.src, oliveImage.src, bakuoliveImage.src],
+        },
+      ],
+    }),
     [t]
+  );
+}
+
+function ActivityGrid({
+  items,
+  onSelect,
+}: {
+  items: ProjectCardData[];
+  onSelect: (project: ProjectCardData) => void;
+}): ReactNode {
+  return (
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {items.map((project) => (
+        <motion.div
+          key={project.id}
+          layout
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ProjectCard
+            project={project}
+            onClick={() => onSelect(project)}
+          />
+        </motion.div>
+      ))}
+    </div>
   );
 }
 
 export default function ProjectsPage(): ReactNode {
   const t = useTranslations("projects");
-  const projects = useProjects(t as TWithValues);
+  const { projects, works } = useActivitiesData(t as TWithValues);
   const [selectedProject, setSelectedProject] =
     useState<ProjectCardData | null>(null);
 
@@ -130,26 +167,33 @@ export default function ProjectsPage(): ReactNode {
         </Container>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-20">
+      {/* Our Projects Section */}
+      <section className="py-16 bg-card">
         <Container>
-          <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ProjectCard
-                  project={project}
-                  onClick={() => setSelectedProject(project)}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl sm:text-3xl font-bold text-foreground mb-10"
+          >
+            {t("section_projects")}
+          </motion.h2>
+          <ActivityGrid items={projects} onSelect={setSelectedProject} />
+        </Container>
+      </section>
+
+      {/* Our Works Section */}
+      <section className="py-16 bg-background">
+        <Container>
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl sm:text-3xl font-bold text-foreground mb-10"
+          >
+            {t("section_works")}
+          </motion.h2>
+          <ActivityGrid items={works} onSelect={setSelectedProject} />
         </Container>
       </section>
 

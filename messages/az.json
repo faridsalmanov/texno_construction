@@ -7,7 +7,7 @@
     "home": "Ana Səhifə",
     "about": "Haqqımızda",
     "services": "Xidmətlər",
-    "projects": "Layihələr",
+    "projects": "Fəaliyyətlər",
     "contact": "Əlaqə"
   },
   "hero": {
@@ -18,7 +18,7 @@
     "title": "Etibarlı və peşəkar tikinti tərəfdaşınız",
     "subtitle": "Peşəkar tikinti-quraşdırma xidmətləri, müasir texnologiyalar və innovativ həllər. Layihələrinizi təhlükəsiz, yüksək keyfiyyətlə və vaxtında həyata keçiririk.",
     "cta": "Bizimlə Əlaqə",
-    "secondary_cta": "Layihələrimiz"
+    "secondary_cta": "Fəaliyyətlərimiz"
   },
   "services": {
     "title": "Xidmətlərimiz",
@@ -143,7 +143,7 @@
     "feature_team": "Geniş təcrübəyə malik mühəndis və texniki heyəti",
     "feature_tech": "Müasir texnologiyalar və innovativ yanaşmalar",
     "feature_delivery": "Təhlükəsiz, yüksək keyfiyyətli və vaxtında təhvil",
-    "feature_portfolio": "Şirkətin portfelinə dövlət obyektləri ilə yanaşı, özəl layihələr də daxildir",
+    "feature_portfolio": "Dövlət və özəl layihələrlə zəngin portfel",
     "feature_weps": "Qadınların gücləndirilməsi və gender bərabərliyi (WEPs) öhdəliyimiz",
     "story_title": "Bizim Hekayəmiz",
     "story_paragraph": "Qısa müddət ərzində şirkətimiz tikinti sektorunda nüfuzlu və etibarlı şirkətlərdən birinə çevrilmişdir. Bu uğur əsasən innovativ yanaşmaların tətbiqi, peşəkar kollektivin zəhməti və rəqabətədavamlı fəaliyyət strategiyamız sayəsində əldə olunmuşdur. Layihələrin təhlükəsiz, yüksək keyfiyyətlə və müəyyən olunmuş vaxt çərçivəsində icra edilməsi müştərilərimizin bizə olan etimadını daha da gücləndirir.",
@@ -168,7 +168,7 @@
     ],
     "features": [
       "11+ il təcrübə",
-      "Şirkətin portfelinə dövlət obyektləri ilə yanaşı, bir sıra özəl layihələr də daxildir",
+      "Dövlət və özəl layihələrlə zəngin portfel",
       "100+ müştəri",
       "Geniş təcrübəyə malik mühəndis və usta heyəti"
     ]
@@ -178,10 +178,11 @@
     "title": "Tərəfdaşlarımız"
   },
   "projects": {
-    "title": "Layihələrimiz",
-    "title_with_format": "{name} ilə layihəmiz",
-    "subtitle": "Uğurla həyata keçirdiyimiz layihələrdən nümunələr",
-    "view_all": "Bütün Layihələri Gör",
+    "title": "Fəaliyyətlərimiz",
+    "subtitle": "Layihə və işlərimizdən nümunələr",
+    "section_projects": "Layihələrimiz",
+    "section_works": "İşlərimiz",
+    "view_all": "Bütün Fəaliyyətləri Gör",
     "view_details": "Ətraflı Bax",
     "view_full_details": "Ətraflı məlumat",
     "descriptions": {
@@ -201,6 +202,11 @@
       "olive_garden": "Tingilər üçün hazırlanmış reykaların təmin edilməsi."
     },
     "names": {
+      "cop29": "COP29",
+      "zefer_muzeyi": "Zəfər muzeyi",
+      "toplan": "Toplan",
+      "azerisiq": "Azərişıq",
+      "baku_media_center": "Baku Media Center",
       "absheron_olive_garden": "Absheron Olive Garden"
     },
     "categories": {
@@ -278,7 +284,7 @@
     "contact_info": "Əlaqə Məlumatı",
     "follow_us": "Bizi İzləyin",
     "copyright": "© 2026 TEXNO CONSTRUCTION AZ MMC. Bütün hüquqlar qorunur.",
-    "company_short": "Layihələr",
+    "company_short": "Fəaliyyətlərimiz",
     "all_rights": "Bütün hüquqlar qorunur",
     "developed_by": "NOVA tərəfindən hazırlanıb",
     "address_value": "Bakı, Azərbaycan",

@@ -7,7 +7,7 @@
     "home": "Главная",
     "about": "О Нас",
     "services": "Услуги",
-    "projects": "Проекты",
+    "projects": "Активности",
     "contact": "Контакты"
   },
   "hero": {
@@ -18,7 +18,7 @@
     "title": "Ваш Надежный Строительный Партнер",
     "subtitle": "Профессиональные строительно-монтажные услуги, современные технологии и инновационные решения. Выполняем ваши проекты безопасно, качественно и в срок.",
     "cta": "Бесплатная Консультация",
-    "secondary_cta": "Наши Проекты"
+    "secondary_cta": "Наши Активности"
   },
   "services": {
     "title": "Наши Услуги",
@@ -178,14 +178,20 @@
     "title": "Наши Партнеры"
   },
   "projects": {
-    "title": "Наши Проекты",
-    "title_with_format": "Наш проект с {name}",
-    "subtitle": "Примеры наших успешно реализованных проектов",
-    "view_all": "Все Проекты",
+    "title": "Наши Активности",
+    "subtitle": "Примеры наших проектов и работ",
+    "section_projects": "Наши Проекты",
+    "section_works": "Наши Работы",
+    "view_all": "Все Активности",
     "view_details": "Подробнее",
     "view_full_details": "Подробная информация",
     "names": {
-      "absheron_olive_garden": "Оливковый сад Абшерона"
+      "cop29": "COP29",
+      "zefer_muzeyi": "Музей Зафар",
+      "toplan": "Топлан",
+      "azerisiq": "Azərişıq",
+      "baku_media_center": "Baku Media Center",
+      "absheron_olive_garden": "Absheron Olive Garden"
     },
     "categories": {
       "international": "Международный",
@@ -249,7 +255,7 @@
     "contact_info": "Контактная Информация",
     "follow_us": "Подписывайтесь",
     "copyright": "© 2026 TEXNO CONSTRUCTION AZ MMC. Все права защищены.",
-    "company_short": "Проекты",
+    "company_short": "Активности",
     "all_rights": "Все права защищены",
     "developed_by": "Разработано NOVA"
   }

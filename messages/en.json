@@ -7,7 +7,7 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "projects": "Projects",
+    "projects": "Activities",
     "contact": "Contact"
   },
   "hero": {
@@ -18,7 +18,7 @@
     "title": "Your Trusted Construction Partner",
     "subtitle": "Professional construction and installation services, modern technologies and innovative solutions. We execute your projects safely, with high quality and on time.",
     "cta": "Free Consultation",
-    "secondary_cta": "Our Projects"
+    "secondary_cta": "Our Activities"
   },
   "services": {
     "title": "Our Services",
@@ -178,13 +178,19 @@
     "title": "Our Partners"
   },
   "projects": {
-    "title": "Our Projects",
-    "title_with_format": "Our project with {name}",
-    "subtitle": "Examples of our successfully completed projects",
-    "view_all": "View All Projects",
+    "title": "Our Activities",
+    "subtitle": "Examples of our projects and works",
+    "section_projects": "Our Projects",
+    "section_works": "Our Works",
+    "view_all": "View All Activities",
     "view_details": "View Details",
     "view_full_details": "View full details",
     "names": {
+      "cop29": "COP29",
+      "zefer_muzeyi": "Zafar Museum",
+      "toplan": "Toplan",
+      "azerisiq": "Azərişıq",
+      "baku_media_center": "Baku Media Center",
       "absheron_olive_garden": "Absheron Olive Garden"
     },
     "categories": {
@@ -249,7 +255,7 @@
     "contact_info": "Contact Info",
     "follow_us": "Follow Us",
     "copyright": "© 2026 TEXNO CONSTRUCTION AZ MMC. All rights reserved.",
-    "company_short": "Projects",
+    "company_short": "Activities",
     "all_rights": "All rights reserved",
     "developed_by": "Developed by NOVA"
   }

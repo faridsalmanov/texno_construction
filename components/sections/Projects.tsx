@@ -12,32 +12,10 @@ import cop29Image from "@/lib/assets/projects/cop29.jpeg";
 import toplanImage from "@/lib/assets/projects/toplan.jpeg";
 import zeferImage from "@/lib/assets/projects/zefer.png";
 
-type Project = {
-  id: number;
-  image: string;
-  category: string;
-  name: string;
-};
-
-const projects: Project[] = [
-  {
-    id: 1,
-    image: cop29Image.src,
-    category: "International",
-    name: "COP29",
-  },
-  {
-    id: 2,
-    image: zeferImage.src,
-    category: "Commercial",
-    name: "Zəfər muzeyi",
-  },
-  {
-    id: 3,
-    image: toplanImage.src,
-    category: "Construction",
-    name: "Toplan",
-  },
+const HOMEPAGE_PROJECTS: { id: number; image: string; categoryKey: string; nameKey: string }[] = [
+  { id: 1, image: cop29Image.src, categoryKey: "international", nameKey: "cop29" },
+  { id: 2, image: zeferImage.src, categoryKey: "commercial", nameKey: "zefer_muzeyi" },
+  { id: 3, image: toplanImage.src, categoryKey: "construction", nameKey: "toplan" },
 ];
 
 export function Projects(): ReactNode {
@@ -60,7 +38,7 @@ export function Projects(): ReactNode {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {HOMEPAGE_PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -72,14 +50,14 @@ export function Projects(): ReactNode {
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img
                     src={project.image}
-                    alt={(t as (key: string, values?: Record<string, string>) => string)("title_with_format", { name: project.name })}
+                    alt={t(`names.${project.nameKey}`)}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-foreground">
-                    {(t as (key: string, values?: Record<string, string>) => string)("title_with_format", { name: project.name })}
+                    {t(`names.${project.nameKey}`)}
                   </h3>
                 </div>
               </Card>
