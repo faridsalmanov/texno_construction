@@ -1,7 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import type { ReactNode } from "react";
 
@@ -23,6 +23,7 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, onClick }: ProjectCardProps): ReactNode {
+  const t = useTranslations("projects");
   return (
     <Card
       className="group cursor-pointer h-full overflow-hidden"
@@ -55,16 +56,13 @@ export function ProjectCard({ project, onClick }: ProjectCardProps): ReactNode {
               </span>
             </div>
             <span className="inline-flex items-center gap-2 mt-3 text-secondary-light font-medium text-sm">
-              View full details
+              {t("view_full_details")}
               <ArrowUpRight className="h-4 w-4" />
             </span>
           </div>
         </div>
         <div className="p-6">
-          <span className="text-xs font-medium text-secondary uppercase tracking-wider">
-            {project.category}
-          </span>
-          <h3 className="text-xl font-semibold text-foreground mt-1">
+          <h3 className="text-xl font-semibold text-foreground">
             {project.title}
           </h3>
           <div className="flex items-center gap-4 text-muted text-sm mt-2">

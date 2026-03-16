@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
@@ -11,65 +11,61 @@ import type { ReactNode } from "react";
 import type { ProjectCardData } from "@/components/projects/ProjectCard";
 
 import cop29Image from "@/lib/assets/projects/cop29.jpeg";
+import cop29Photo from "@/lib/assets/projects/cop29_photo.jpeg";
 import toplanImage from "@/lib/assets/projects/toplan.jpeg";
+import toplanImagePng from "@/lib/assets/projects/toplan image.png";
 import zeferImage from "@/lib/assets/projects/zefer.png";
+import zeferMuzey from "@/lib/assets/projects/zefer muzey.jpg";
+import zeferMuzey2 from "@/lib/assets/projects/zefermuzey2.jpg";
 
-const PLACEHOLDER_IMAGE = (w: number, h: number, text: string) =>
-  `https://placehold.co/${w}x${h}/1e3a5f/ffffff?text=${encodeURIComponent(text)}`;
-
-const projects: ProjectCardData[] = [
-  {
-    id: 1,
-    image: cop29Image.src,
-    category: "Beynəlxalq",
-    title: "COP29",
-    location: "Bakı",
-    year: "2024",
-    description: "Beynəlxalq iqlim konfransı layihəsi",
-    extendedDescription:
-      "[Placeholder – Extended description for COP29 project. Add full project overview, scope of work, key achievements, timeline, and any notable details. This text will be displayed on hover and in the detail modal.]",
-    galleryImages: [
-      cop29Image.src,
-      PLACEHOLDER_IMAGE(800, 600, "COP29 - Image 2"),
-      PLACEHOLDER_IMAGE(800, 600, "COP29 - Image 3"),
+function useProjects(t: (key: string) => string): ProjectCardData[] {
+  return useMemo(
+    () => [
+      {
+        id: 1,
+        image: cop29Image.src,
+        category: t("categories.international"),
+        title: "COP29",
+        location: "Bakı",
+        year: "2024",
+        description: t("descriptions.cop29_short"),
+        extendedDescription: t("extended.cop29"),
+        galleryImages: [cop29Image.src, cop29Photo.src],
+      },
+      {
+        id: 2,
+        image: zeferImage.src,
+        category: t("categories.commercial"),
+        title: "PMD PROJECTS",
+        location: "Bakı",
+        year: "2024",
+        description: t("descriptions.pmd_short"),
+        extendedDescription: t("extended.pmd"),
+        galleryImages: [
+          zeferImage.src,
+          zeferMuzey.src,
+          zeferMuzey2.src,
+        ],
+      },
+      {
+        id: 3,
+        image: toplanImage.src,
+        category: t("categories.construction"),
+        title: "TOPLAN",
+        location: "Bakı",
+        year: "2024",
+        description: t("descriptions.toplan_short"),
+        extendedDescription: t("extended.toplan"),
+        galleryImages: [toplanImage.src, toplanImagePng.src],
+      },
     ],
-  },
-  {
-    id: 2,
-    image: zeferImage.src,
-    category: "Kommersiya",
-    title: "PMD PROJECTS",
-    location: "Bakı",
-    year: "2024",
-    description: "Peşəkar tikinti-quraşdırma layihəsi",
-    extendedDescription:
-      "[Placeholder – Extended description for PMD PROJECTS. Add full project overview, scope of work, key achievements, timeline, and any notable details. This text will be displayed on hover and in the detail modal.]",
-    galleryImages: [
-      zeferImage.src,
-      PLACEHOLDER_IMAGE(800, 600, "PMD - Image 2"),
-      PLACEHOLDER_IMAGE(800, 600, "PMD - Image 3"),
-    ],
-  },
-  {
-    id: 3,
-    image: toplanImage.src,
-    category: "Tikinti",
-    title: "TOPLAN",
-    location: "Bakı",
-    year: "2024",
-    description: "Tikinti-quraşdırma layihəsi",
-    extendedDescription:
-      "[Placeholder – Extended description for TOPLAN project. Add full project overview, scope of work, key achievements, timeline, and any notable details. This text will be displayed on hover and in the detail modal.]",
-    galleryImages: [
-      toplanImage.src,
-      PLACEHOLDER_IMAGE(800, 600, "TOPLAN - Image 2"),
-      PLACEHOLDER_IMAGE(800, 600, "TOPLAN - Image 3"),
-    ],
-  },
-];
+    [t]
+  );
+}
 
 export default function ProjectsPage(): ReactNode {
   const t = useTranslations("projects");
+  const projects = useProjects(t);
   const [selectedProject, setSelectedProject] =
     useState<ProjectCardData | null>(null);
 

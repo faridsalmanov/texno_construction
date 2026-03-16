@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
-import { X, MapPin, Calendar } from "lucide-react";
+import { useEffect, useCallback, useState } from "react";
+import { X, MapPin, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ReactNode } from "react";
 import type { ProjectCardData } from "./ProjectCard";
@@ -15,6 +15,7 @@ export function ProjectDetailModal({
   project,
   onClose,
 }: ProjectDetailModalProps): ReactNode {
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const handleEscape = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -22,8 +23,14 @@ export function ProjectDetailModal({
     [onClose]
   );
 
+  const galleryImages = project
+    ? (project.galleryImages ?? [project.image])
+    : [];
+  const selectedImage = galleryImages[selectedIndex];
+
   useEffect(() => {
     if (project) {
+      setSelectedIndex(0);
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleEscape);
     }
@@ -32,6 +39,15 @@ export function ProjectDetailModal({
       window.removeEventListener("keydown", handleEscape);
     };
   }, [project, handleEscape]);
+
+  const goPrev = useCallback(() => {
+    setSelectedIndex((i) => (i <= 0 ? galleryImages.length - 1 : i - 1));
+  }, [galleryImages.length]);
+  const goNext = useCallback(() => {
+    setSelectedIndex((i) =>
+      i >= galleryImages.length - 1 ? 0 : i + 1
+    );
+  }, [galleryImages.length]);
 
   return (
     <AnimatePresence>
@@ -57,7 +73,7 @@ export function ProjectDetailModal({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.25 }}
-          className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+          className="relative bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col"
           onClick={(e) => e.stopPropagation()}
         >
           <button
@@ -69,28 +85,40 @@ export function ProjectDetailModal({
             <X className="h-5 w-5 text-foreground" />
           </button>
 
-          {/* Image gallery */}
-          <div className="flex gap-2 p-4 overflow-x-auto scrollbar-hide bg-card border-b border-border">
-            {(project.galleryImages ?? [project.image]).map((src, index) => (
-              <div
-                key={`${project.id}-img-${index}`}
-                className="flex-shrink-0 w-32 h-24 rounded-lg overflow-hidden bg-muted"
-              >
-                <img
-                  src={src}
-                  alt={`${project.title} - Image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+          {/* Large gallery - main image */}
+          <div className="relative bg-muted h-[45vh] min-h-[320px] md:h-[55vh] md:min-h-[420px] flex items-center justify-center">
+            {selectedImage && (
+              <img
+                src={selectedImage}
+                alt={`${project.title} - Image ${selectedIndex + 1}`}
+                className="max-w-full max-h-full w-auto h-auto object-contain"
+              />
+            )}
+            {galleryImages.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 hover:bg-white shadow-md transition-colors"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="h-6 w-6 text-foreground" />
+                </button>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 hover:bg-white shadow-md transition-colors"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="h-6 w-6 text-foreground" />
+                </button>
+              </>
+            )}
           </div>
 
           {/* Text content */}
           <div className="flex-1 overflow-y-auto p-6 md:p-8">
-            <span className="text-xs font-medium text-secondary uppercase tracking-wider">
-              {project.category}
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-1 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               {project.title}
             </h2>
             <div className="flex flex-wrap items-center gap-4 text-muted text-sm mb-6">

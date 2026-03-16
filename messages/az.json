@@ -182,6 +182,17 @@
     "subtitle": "Uğurla həyata keçirdiyimiz layihələrdən nümunələr",
     "view_all": "Bütün Layihələri Gör",
     "view_details": "Ətraflı Bax",
+    "view_full_details": "Ətraflı məlumat",
+    "descriptions": {
+      "cop29_short": "Beynəlxalq iqlim konfransı layihəsi",
+      "pmd_short": "Peşəkar tikinti-quraşdırma layihəsi",
+      "toplan_short": "Tikinti-quraşdırma layihəsi"
+    },
+    "extended": {
+      "toplan": "Toplan' Sahibsiz İtlərə Qayğı Mərkəzində gətirilmiş heyvanlarla bağlı maarifləndirmə tədbirlərinin təşkili, əməkdaşlar üçün təlimlərin keçirilməsi, statistik məlumat bazasının aparılması və cari təmir işlərinin görülməsi.",
+      "cop29": "COP29 beynəlxalq tədbiri çərçivəsində COP29 İnformasiya Mərkəzinin tikintisi və mebel ilə təchiz edilməsi üzrə işlərin görülməsi.",
+      "pmd": "\"Zəfər Muzeyi\" layihəsi üçün IT avadanlıqlarının təchizatı və proqram təminat xidmətlərinin göstərilməsi."
+    },
     "categories": {
       "international": "Beynəlxalq",
       "commercial": "Kommersiya",
