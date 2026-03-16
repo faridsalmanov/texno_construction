@@ -8,11 +8,11 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import type { ReactNode } from "react";
 
-const PHONE_VALUE = "+994 051 391 00 00";
+const PHONE_VALUE = "+994 51 391 00 00";
 const EMAIL_VALUE = "Texno-construction_az@mail.ru";
 
 const contactInfoItems = [
-  { icon: Phone, key: "phone" as const, value: PHONE_VALUE, href: "tel:+9940513910000" },
+  { icon: Phone, key: "phone" as const, value: PHONE_VALUE, href: "tel:+994513910000" },
   { icon: Mail, key: "email" as const, value: EMAIL_VALUE, href: "mailto:Texno-construction_az@mail.ru" },
   { icon: Clock, key: "hours" as const },
 ];

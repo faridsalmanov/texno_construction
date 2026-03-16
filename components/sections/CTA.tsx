@@ -53,10 +53,10 @@ export function CTA(): ReactNode {
               variant="outline"
               size="lg"
               className="w-full sm:w-auto border-white text-white hover:bg-primary-light/40 hover:text-white hover:border-primary-light"
-              onClick={() => window.open("tel:+9940513910000")}
+              onClick={() => window.open("tel:+994513910000")}
             >
               <Phone className="mr-2 h-5 w-5" />
-              +994 051 391 00 00
+              +994 51 391 00 00
             </Button>
           </div>
         </motion.div>

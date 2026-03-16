@@ -17,11 +17,12 @@ import toplanImagePng from "@/lib/assets/projects/toplan image.png";
 import zeferImage from "@/lib/assets/projects/zefer.png";
 import zeferMuzey from "@/lib/assets/projects/zefer muzey.jpg";
 import zeferMuzey2 from "@/lib/assets/projects/zefermuzey2.jpg";
-import azerisiqImage from "@/lib/assets/projects/azerisiq.png";
-import azerisiqImage1 from "@/lib/assets/projects/azerisiq1.jpg";
 import mediaCenterImage from "@/lib/assets/projects/media center.jpg";
 import mediacenterImage from "@/lib/assets/projects/mediacenter.png";
-import oliveImage from "@/lib/assets/projects/olive.jpeg";
+import azerisiqLogo from "@/lib/assets/partners/azerisiq2.png";
+import azerisiqImage from "@/lib/assets/projects/azerisiq.png";
+import azerisiqImage1 from "@/lib/assets/projects/azerisiq1.jpg";
+import absheronOliveLogo from "@/lib/assets/partners/absheronolive2.png";
 import olivegardenImage from "@/lib/assets/projects/olivegarden.png";
 import bakuoliveImage from "@/lib/assets/projects/bakuolive.png";
 
@@ -88,7 +89,7 @@ function useActivitiesData(t: TWithValues): ProjectsData {
         },
         {
           id: 5,
-          image: azerisiqImage1.src,
+          image: azerisiqLogo.src,
           category: t("categories.commercial"),
           title: t("names.azerisiq"),
           location: "Bakı",
@@ -99,14 +100,14 @@ function useActivitiesData(t: TWithValues): ProjectsData {
         },
         {
           id: 6,
-          image: olivegardenImage.src,
+          image: absheronOliveLogo.src,
           category: t("categories.commercial"),
           title: t("names.absheron_olive_garden"),
           location: "Bakı",
           year: "2024",
           description: t("descriptions.olive_garden_short"),
           extendedDescription: t("extended.olive_garden"),
-          galleryImages: [olivegardenImage.src, oliveImage.src, bakuoliveImage.src],
+          galleryImages: [olivegardenImage.src, bakuoliveImage.src],
         },
       ],
     }),

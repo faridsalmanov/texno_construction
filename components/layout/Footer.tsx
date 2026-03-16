@@ -85,8 +85,8 @@ export function Footer(): ReactNode {
           <div className="flex flex-col gap-2 text-center order-1 lg:order-2">
             <div className="flex items-center justify-center gap-2 text-sm text-white/90 break-all">
               <Phone className="h-4 w-4 text-white shrink-0" />
-              <a href="tel:+9940513910000" className="hover:text-white transition-colors">
-                +994 051 391 00 00
+              <a href="tel:+994513910000" className="hover:text-white transition-colors">
+                +994 51 391 00 00
               </a>
             </div>
             <div className="flex items-center justify-center gap-2 text-sm text-white/90">

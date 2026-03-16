@@ -15,6 +15,8 @@ export type ProjectCardData = {
   description: string;
   extendedDescription?: string;
   galleryImages?: string[];
+  /** Use "contain" for logos so they display fully without cropping */
+  imageFit?: "cover" | "contain";
 };
 
 type ProjectCardProps = {
@@ -34,11 +36,17 @@ export function ProjectCard({ project, onClick }: ProjectCardProps): ReactNode {
         onClick={onClick}
         className="w-full h-full text-left block"
       >
-        <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
+        <div
+          className={`relative h-40 sm:h-44 md:h-48 overflow-hidden ${
+            project.imageFit === "contain" ? "bg-muted flex items-center justify-center p-4" : ""
+          }`}
+        >
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${
+              project.imageFit === "contain" ? "object-contain" : "object-cover"
+            }`}
           />
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4">

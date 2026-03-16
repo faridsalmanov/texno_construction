@@ -5,8 +5,8 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import type { ReactNode } from "react";
 
-import absheronOlive from "@/lib/assets/partners/absheron olive.jpg";
-import azerisiq from "@/lib/assets/partners/azerisiq.jpeg";
+import absheronOlive from "@/lib/assets/partners/absheronolive2.png";
+import azerisiq from "@/lib/assets/partners/azerisiq2.png";
 import bakuMediaCenter from "@/lib/assets/partners/baku media center.jpg";
 import fuga from "@/lib/assets/partners/fuga.png";
 import azerelektrik from "@/lib/assets/partners/azerelektrik.png";
