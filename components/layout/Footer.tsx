@@ -25,10 +25,10 @@ export function Footer(): ReactNode {
   ];
 
   const socialLinks = [
-    { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-    { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
-    { href: "https://youtube.com", icon: Youtube, label: "YouTube" },
-    { href: "https://facebook.com", icon: Facebook, label: "Facebook" },
+    { icon: Linkedin, label: "LinkedIn" },
+    { icon: Instagram, label: "Instagram" },
+    { icon: Youtube, label: "YouTube" },
+    { icon: Facebook, label: "Facebook" },
   ];
 
   return (
@@ -59,17 +59,14 @@ export function Footer(): ReactNode {
           </nav>
 
           <div className="flex items-center gap-3 shrink-0">
-            {socialLinks.map(({ href, icon: Icon, label }) => (
-              <a
+            {socialLinks.map(({ icon: Icon, label }) => (
+              <span
                 key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded border border-white/40 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+                className="w-9 h-9 rounded border border-white/40 flex items-center justify-center text-white/80 cursor-default"
                 aria-label={label}
               >
                 <Icon className="h-4 w-4" />
-              </a>
+              </span>
             ))}
           </div>
         </div>
@@ -88,8 +85,8 @@ export function Footer(): ReactNode {
           <div className="flex flex-col gap-2 text-center order-1 lg:order-2">
             <div className="flex items-center justify-center gap-2 text-sm text-white/90 break-all">
               <Phone className="h-4 w-4 text-white shrink-0" />
-              <a href="tel:+994516579642" className="hover:text-white transition-colors">
-                +994 51 657 96 42
+              <a href="tel:+9940513910000" className="hover:text-white transition-colors">
+                +994 051 391 00 00
               </a>
             </div>
             <div className="flex items-center justify-center gap-2 text-sm text-white/90">
