@@ -86,7 +86,7 @@ export function ProjectDetailModal({
           </button>
 
           {/* Large gallery - main image */}
-          <div className="relative bg-muted h-[45vh] min-h-[320px] md:h-[55vh] md:min-h-[420px] flex items-center justify-center">
+          <div className="relative bg-muted h-[45vh] min-h-[240px] md:h-[55vh] md:min-h-[420px] flex items-center justify-center">
             {selectedImage && (
               <img
                 src={selectedImage}

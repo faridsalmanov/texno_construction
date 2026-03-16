@@ -37,13 +37,13 @@ export function Hero(): ReactNode {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               {t("title")}
             </h1>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-xl">
               {t("subtitle")}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <Button href="/contact" variant="secondary" size="lg">
                 {t("cta")}
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -56,28 +56,28 @@ export function Hero(): ReactNode {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:block"
+            className="mt-10 lg:mt-0"
           >
             {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
-                <p className="text-4xl font-bold text-secondary">11+</p>
-                <p className="text-white/80">{t("stats_years")}</p>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md lg:max-w-none">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                <p className="text-3xl lg:text-4xl font-bold text-secondary">11+</p>
+                <p className="text-white/80 text-sm lg:text-base">{t("stats_years")}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
-                <p className="text-4xl font-bold text-secondary">COP29</p>
-                <p className="text-white/80">{t("stats_projects")}</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                <p className="text-3xl lg:text-4xl font-bold text-secondary">COP29</p>
+                <p className="text-white/80 text-sm lg:text-base">{t("stats_projects")}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
-                <p className="text-4xl font-bold text-secondary">EL-425</p>
-                <p className="text-white/80">{t("stats_license")}</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                <p className="text-3xl lg:text-4xl font-bold text-secondary">EL-425</p>
+                <p className="text-white/80 text-sm lg:text-base">{t("stats_license")}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
-                <p className="text-4xl font-bold text-secondary">2013</p>
-                <p className="text-white/80">{t("stats_founded")}</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                <p className="text-3xl lg:text-4xl font-bold text-secondary">2013</p>
+                <p className="text-white/80 text-sm lg:text-base">{t("stats_founded")}</p>
               </div>
             </div>
           </motion.div>

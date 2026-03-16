@@ -15,7 +15,7 @@
     "stats_projects": "PMD, TOPLAN",
     "stats_license": "Lisenziya 2024",
     "stats_founded": "Təsis ili",
-    "title": "Güvənilir Tikinti Tərəfdaşınız",
+    "title": "Etibarlı və peşəkar tikinti tərəfdaşınız",
     "subtitle": "Peşəkar tikinti-quraşdırma xidmətləri, müasir texnologiyalar və innovativ həllər. Layihələrinizi təhlükəsiz, yüksək keyfiyyətlə və vaxtında həyata keçiririk.",
     "cta": "Bizimlə Əlaqə",
     "secondary_cta": "Layihələrimiz"
@@ -186,12 +186,18 @@
     "descriptions": {
       "cop29_short": "Beynəlxalq iqlim konfransı layihəsi",
       "pmd_short": "Peşəkar tikinti-quraşdırma layihəsi",
-      "toplan_short": "Tikinti-quraşdırma layihəsi"
+      "toplan_short": "Tikinti-quraşdırma layihəsi",
+      "azerisiq_short": "Elektrik xətlərində elektrik axınını ölçən cihazların, elektrik panolarının və güc transformatorlarının təmin edilməsi",
+      "media_center_short": "Film çəkilişi üçün çəkiliş məkanlarının hazırlanması və elektrik xətlərinin çəkilməsi",
+      "olive_garden_short": "Tingilər üçün hazırlanmış reykaların təmin edilməsi"
     },
     "extended": {
       "toplan": "Toplan' Sahibsiz İtlərə Qayğı Mərkəzində gətirilmiş heyvanlarla bağlı maarifləndirmə tədbirlərinin təşkili, əməkdaşlar üçün təlimlərin keçirilməsi, statistik məlumat bazasının aparılması və cari təmir işlərinin görülməsi.",
       "cop29": "COP29 beynəlxalq tədbiri çərçivəsində COP29 İnformasiya Mərkəzinin tikintisi və mebel ilə təchiz edilməsi üzrə işlərin görülməsi.",
-      "pmd": "\"Zəfər Muzeyi\" layihəsi üçün IT avadanlıqlarının təchizatı və proqram təminat xidmətlərinin göstərilməsi."
+      "pmd": "\"Zəfər Muzeyi\" layihəsi üçün IT avadanlıqlarının təchizatı və proqram təminat xidmətlərinin göstərilməsi.",
+      "azerisiq": "Elektrik xətlərində elektrik axınını ölçən cihazların, elektrik panolarının və güc transformatorlarının təmin edilməsi.",
+      "media_center": "Film çəkilişi üçün çəkiliş məkanlarının çertyojunun hazırlanması, çəkiliş meydançalarının konstruksiya ilə qurulması və elektrik xətlərinin çəkilməsi işlərinin görülməsi.",
+      "olive_garden": "Tingilər üçün hazırlanmış reykaların təmin edilməsi."
     },
     "categories": {
       "international": "Beynəlxalq",

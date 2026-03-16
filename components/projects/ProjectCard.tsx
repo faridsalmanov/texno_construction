@@ -34,7 +34,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps): ReactNode {
         onClick={onClick}
         className="w-full h-full text-left block"
       >
-        <div className="relative h-72 overflow-hidden">
+        <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
           <img
             src={project.image}
             alt={project.title}

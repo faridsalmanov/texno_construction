@@ -29,7 +29,7 @@ export default function ContactPage(): ReactNode {
   return (
     <main>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-primary">
+      <section className="pt-24 pb-16 sm:pt-28 sm:pb-18 md:pt-32 md:pb-20 bg-primary">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function ContactPage(): ReactNode {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               {t("title")}
             </h1>
             <p className="text-xl text-white/90">{t("subtitle")}</p>
@@ -56,7 +56,7 @@ export default function ContactPage(): ReactNode {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="p-8">
+              <Card className="p-4 sm:p-6 lg:p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6">
                   {t("form_title")}
                 </h2>

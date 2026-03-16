@@ -17,6 +17,14 @@ import toplanImagePng from "@/lib/assets/projects/toplan image.png";
 import zeferImage from "@/lib/assets/projects/zefer.png";
 import zeferMuzey from "@/lib/assets/projects/zefer muzey.jpg";
 import zeferMuzey2 from "@/lib/assets/projects/zefermuzey2.jpg";
+import azerisiqImage from "@/lib/assets/projects/azerisiq.png";
+import azerisiqImage1 from "@/lib/assets/projects/azerisiq1.jpg";
+import azerisiqImage2 from "@/lib/assets/projects/azerisiq2.png";
+import mediaCenterImage from "@/lib/assets/projects/media center.jpg";
+import mediacenterImage from "@/lib/assets/projects/mediacenter.png";
+import oliveImage from "@/lib/assets/projects/olive.jpeg";
+import olivegardenImage from "@/lib/assets/projects/olivegarden.png";
+import bakuoliveImage from "@/lib/assets/projects/bakuolive.png";
 
 function useProjects(t: (key: string) => string): ProjectCardData[] {
   return useMemo(
@@ -58,6 +66,43 @@ function useProjects(t: (key: string) => string): ProjectCardData[] {
         extendedDescription: t("extended.toplan"),
         galleryImages: [toplanImage.src, toplanImagePng.src],
       },
+      {
+        id: 4,
+        image: azerisiqImage1.src,
+        category: t("categories.commercial"),
+        title: "Azərişıq",
+        location: "Bakı",
+        year: "2024",
+        description: t("descriptions.azerisiq_short"),
+        extendedDescription: t("extended.azerisiq"),
+        galleryImages: [
+          azerisiqImage1.src,
+          azerisiqImage.src,
+          azerisiqImage2.src,
+        ],
+      },
+      {
+        id: 5,
+        image: mediaCenterImage.src,
+        category: t("categories.commercial"),
+        title: "Baku Media Center",
+        location: "Bakı",
+        year: "2024",
+        description: t("descriptions.media_center_short"),
+        extendedDescription: t("extended.media_center"),
+        galleryImages: [mediaCenterImage.src, mediacenterImage.src],
+      },
+      {
+        id: 6,
+        image: oliveImage.src,
+        category: t("categories.commercial"),
+        title: "Baku Olive Garden",
+        location: "Bakı",
+        year: "2024",
+        description: t("descriptions.olive_garden_short"),
+        extendedDescription: t("extended.olive_garden"),
+        galleryImages: [oliveImage.src, olivegardenImage.src, bakuoliveImage.src],
+      },
     ],
     [t]
   );
@@ -72,7 +117,7 @@ export default function ProjectsPage(): ReactNode {
   return (
     <main>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-primary">
+      <section className="pt-24 pb-16 sm:pt-28 sm:pb-18 md:pt-32 md:pb-20 bg-primary">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +125,7 @@ export default function ProjectsPage(): ReactNode {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               {t("title")}
             </h1>
             <p className="text-xl text-white/90">{t("subtitle")}</p>

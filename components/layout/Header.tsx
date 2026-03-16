@@ -9,7 +9,7 @@ import type { ReactNode } from "react";
 
 export function Header(): ReactNode {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent py-1">
+    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent py-2 sm:py-3">
       <Container>
         <div className="flex items-center justify-between relative">
           {/* Logo */}
@@ -17,9 +17,9 @@ export function Header(): ReactNode {
             <Image
               src="/logo-white.png"
               alt="TEXNO CONSTRUCTION AZ"
-              width={128}
-              height={128}
-              className="object-contain drop-shadow-md"
+              width={96}
+              height={96}
+              className="object-contain drop-shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
             />
           </Link>
 

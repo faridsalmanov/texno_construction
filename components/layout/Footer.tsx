@@ -42,7 +42,7 @@ export function Footer(): ReactNode {
               alt="TEXNO CONSTRUCTION AZ"
               width={96}
               height={96}
-              className="object-contain"
+              className="object-contain w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
             />
           </Link>
 
@@ -86,7 +86,7 @@ export function Footer(): ReactNode {
           </div>
 
           <div className="flex flex-col gap-2 text-center order-1 lg:order-2">
-            <div className="flex items-center justify-center gap-2 text-sm text-white/90">
+            <div className="flex items-center justify-center gap-2 text-sm text-white/90 break-all">
               <Phone className="h-4 w-4 text-white shrink-0" />
               <a href="tel:+994516579642" className="hover:text-white transition-colors">
                 +994 51 657 96 42

@@ -1,10 +1,11 @@
-"use client";
+ "use client";
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Menu, X } from "lucide-react";
 import type { ReactNode } from "react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 type NavItem = {
   href: string;
@@ -74,8 +75,8 @@ export function Navbar({ isTransparent = false }: NavbarProps): ReactNode {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white shadow-lg md:hidden z-50">
-          <nav className="flex flex-col p-4">
+        <div className="absolute top-full left-0 right-0 bg-white shadow-lg md:hidden z-50 max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <nav className="flex flex-col p-4 gap-1">
             {navItems.map((item) => {
               const isActive =
                 pathname === item.href ||
@@ -93,6 +94,10 @@ export function Navbar({ isTransparent = false }: NavbarProps): ReactNode {
                 </Link>
               );
             })}
+
+            <div className="mt-4 pt-4 border-t border-border">
+              <LanguageSwitcher />
+            </div>
           </nav>
         </div>
       )}

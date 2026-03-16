@@ -69,7 +69,7 @@ export function Projects(): ReactNode {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="group cursor-pointer">
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}

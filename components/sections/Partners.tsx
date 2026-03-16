@@ -13,8 +13,8 @@ import azerelektrik from "@/lib/assets/partners/azerelektrik.png";
 
 const LOGO_WIDTH = 120;
 const LOGO_HEIGHT = 80;
-const BOX_WIDTH = 160;
-const BOX_HEIGHT = 130;
+const BOX_WIDTH = 140;
+const BOX_HEIGHT = 110;
 const GAP = 24;
 
 const partners = [

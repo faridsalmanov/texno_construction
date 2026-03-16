@@ -16,7 +16,9 @@ export default function NotFound(): ReactNode {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-9xl font-bold text-primary/20">404</h1>
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-primary/20">
+            404
+          </h1>
           <h2 className="text-3xl font-bold text-foreground mt-4 mb-4">
             Səhifə Tapılmadı
           </h2>

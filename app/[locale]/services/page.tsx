@@ -69,7 +69,7 @@ export default function ServicesPage(): ReactNode {
   return (
     <main>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-primary">
+      <section className="pt-24 pb-16 sm:pt-28 sm:pb-18 md:pt-32 md:pb-20 bg-primary">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ export default function ServicesPage(): ReactNode {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               {t("title")}
             </h1>
             <p className="text-xl text-white/90">{t("subtitle")}</p>
@@ -109,7 +109,7 @@ export default function ServicesPage(): ReactNode {
                       <img
                         src={service.image}
                         alt={t(`${service.key}.title`)}
-                        className="w-full h-[400px] object-cover"
+                        className="w-full h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px] object-cover"
                       />
                     </div>
                   </div>

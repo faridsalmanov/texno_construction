@@ -191,12 +191,18 @@
     "descriptions": {
       "cop29_short": "International climate conference project",
       "pmd_short": "Professional construction and installation project",
-      "toplan_short": "Construction and installation project"
+      "toplan_short": "Construction and installation project",
+      "azerisiq_short": "Supply of current measuring devices for power lines, electrical panels and power transformers",
+      "media_center_short": "Preparation of filming locations and installation of electrical lines for film production",
+      "olive_garden_short": "Supply of materials prepared for tingilər"
     },
     "extended": {
       "toplan": "Organization of awareness events related to animals brought to the Toplan Stray Animal Care Center, conducting training for staff, maintenance of statistical database, and performance of current repair work.",
       "cop29": "Construction and furnishing of the COP29 Information Center within the framework of the COP29 international event.",
-      "pmd": "Supply of IT equipment and provision of software services for the \"Zafar Museum\" project."
+      "pmd": "Supply of IT equipment and provision of software services for the \"Zafar Museum\" project.",
+      "azerisiq": "Provision and supply of current measuring devices for electrical power lines, electrical panels and power transformers.",
+      "media_center": "Preparation of plans for filming locations, construction of filming platforms with metal structures, and installation of electrical lines for film production.",
+      "olive_garden": "Supply of materials prepared for tingilər."
     }
   },
   "cta": {

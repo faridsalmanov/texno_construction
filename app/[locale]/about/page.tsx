@@ -18,7 +18,7 @@ export default function AboutPage(): ReactNode {
   return (
     <main>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-primary">
+      <section className="pt-24 pb-16 sm:pt-28 sm:pb-18 md:pt-32 md:pb-20 bg-primary">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function AboutPage(): ReactNode {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               {t("title")}
             </h1>
             <p className="text-xl text-white/90">{t("subtitle")}</p>
@@ -66,7 +66,7 @@ export default function AboutPage(): ReactNode {
               <p className="text-muted leading-relaxed mb-6">
                 {t("story_paragraph")}
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {features.map((item, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-secondary" />

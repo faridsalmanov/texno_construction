@@ -46,11 +46,11 @@ export function About(): ReactNode {
               <img
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                 alt="Construction team"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[280px] sm:h-[350px] md:h-[450px] lg:h-[500px] object-cover"
               />
             </div>
             {/* Floating Stats Card */}
-            <div className="absolute -bottom-8 -right-8 bg-secondary text-white p-6 rounded-2xl shadow-xl hidden md:block">
+            <div className="absolute -bottom-8 right-2 sm:right-4 md:-right-8 bg-secondary text-white p-4 md:p-6 rounded-2xl shadow-xl hidden md:block">
               <p className="text-4xl font-bold">11+</p>
               <p className="text-white/90">{t("experience")}</p>
             </div>
@@ -82,7 +82,7 @@ export function About(): ReactNode {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {stats.map((stat) => (
                 <div key={stat.key} className="text-center p-4 bg-card rounded-xl">
                   <p className="text-2xl md:text-3xl font-bold text-primary">
