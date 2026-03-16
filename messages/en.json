@@ -179,10 +179,14 @@
   },
   "projects": {
     "title": "Our Projects",
+    "title_with_format": "Our project with {name}",
     "subtitle": "Examples of our successfully completed projects",
     "view_all": "View All Projects",
     "view_details": "View Details",
     "view_full_details": "View full details",
+    "names": {
+      "absheron_olive_garden": "Absheron Olive Garden"
+    },
     "categories": {
       "international": "International",
       "commercial": "Commercial",

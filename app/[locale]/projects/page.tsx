@@ -19,7 +19,6 @@ import zeferMuzey from "@/lib/assets/projects/zefer muzey.jpg";
 import zeferMuzey2 from "@/lib/assets/projects/zefermuzey2.jpg";
 import azerisiqImage from "@/lib/assets/projects/azerisiq.png";
 import azerisiqImage1 from "@/lib/assets/projects/azerisiq1.jpg";
-import azerisiqImage2 from "@/lib/assets/projects/azerisiq2.png";
 import mediaCenterImage from "@/lib/assets/projects/media center.jpg";
 import mediacenterImage from "@/lib/assets/projects/mediacenter.png";
 import oliveImage from "@/lib/assets/projects/olive.jpeg";
@@ -33,7 +32,7 @@ function useProjects(t: (key: string) => string): ProjectCardData[] {
         id: 1,
         image: cop29Image.src,
         category: t("categories.international"),
-        title: "COP29",
+        title: t("title_with_format", { name: "COP29" }),
         location: "Bakı",
         year: "2024",
         description: t("descriptions.cop29_short"),
@@ -44,7 +43,7 @@ function useProjects(t: (key: string) => string): ProjectCardData[] {
         id: 2,
         image: zeferImage.src,
         category: t("categories.commercial"),
-        title: "PMD PROJECTS",
+        title: t("title_with_format", { name: "Zəfər muzeyi" }),
         location: "Bakı",
         year: "2024",
         description: t("descriptions.pmd_short"),
@@ -59,7 +58,7 @@ function useProjects(t: (key: string) => string): ProjectCardData[] {
         id: 3,
         image: toplanImage.src,
         category: t("categories.construction"),
-        title: "TOPLAN",
+        title: t("title_with_format", { name: "Toplan" }),
         location: "Bakı",
         year: "2024",
         description: t("descriptions.toplan_short"),
@@ -70,22 +69,18 @@ function useProjects(t: (key: string) => string): ProjectCardData[] {
         id: 4,
         image: azerisiqImage1.src,
         category: t("categories.commercial"),
-        title: "Azərişıq",
+        title: t("title_with_format", { name: "Azərişıq" }),
         location: "Bakı",
         year: "2024",
         description: t("descriptions.azerisiq_short"),
         extendedDescription: t("extended.azerisiq"),
-        galleryImages: [
-          azerisiqImage1.src,
-          azerisiqImage.src,
-          azerisiqImage2.src,
-        ],
+        galleryImages: [azerisiqImage1.src, azerisiqImage.src],
       },
       {
         id: 5,
         image: mediaCenterImage.src,
         category: t("categories.commercial"),
-        title: "Baku Media Center",
+        title: t("title_with_format", { name: "Baku Media Center" }),
         location: "Bakı",
         year: "2024",
         description: t("descriptions.media_center_short"),
@@ -94,14 +89,14 @@ function useProjects(t: (key: string) => string): ProjectCardData[] {
       },
       {
         id: 6,
-        image: oliveImage.src,
+        image: olivegardenImage.src,
         category: t("categories.commercial"),
-        title: "Baku Olive Garden",
+        title: t("title_with_format", { name: t("names.absheron_olive_garden") }),
         location: "Bakı",
         year: "2024",
         description: t("descriptions.olive_garden_short"),
         extendedDescription: t("extended.olive_garden"),
-        galleryImages: [oliveImage.src, olivegardenImage.src, bakuoliveImage.src],
+        galleryImages: [olivegardenImage.src, oliveImage.src, bakuoliveImage.src],
       },
     ],
     [t]

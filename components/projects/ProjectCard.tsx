@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import type { ReactNode } from "react";
 
@@ -10,8 +10,8 @@ export type ProjectCardData = {
   image: string;
   category: string;
   title: string;
-  location: string;
-  year: string;
+  location?: string;
+  year?: string;
   description: string;
   extendedDescription?: string;
   galleryImages?: string[];
@@ -26,7 +26,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps): ReactNode {
   const t = useTranslations("projects");
   return (
     <Card
-      className="group cursor-pointer h-full overflow-hidden"
+      className="group cursor-pointer h-full overflow-hidden border border-border/60"
       hover={true}
     >
       <button
@@ -34,47 +34,27 @@ export function ProjectCard({ project, onClick }: ProjectCardProps): ReactNode {
         onClick={onClick}
         className="w-full h-full text-left block"
       >
-        <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
+        <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
           <img
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          {/* Hover overlay - more info on image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
-            <p className="text-white/95 text-sm line-clamp-3 mb-4">
+          {/* Hover overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4">
+            <p className="text-white/95 text-xs line-clamp-2 mb-3">
               {project.extendedDescription ?? project.description}
             </p>
-            <div className="flex items-center gap-4 text-white/90 text-sm">
-              <span className="flex items-center gap-1.5">
-                <MapPin className="h-4 w-4 flex-shrink-0" />
-                {project.location}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Calendar className="h-4 w-4 flex-shrink-0" />
-                {project.year}
-              </span>
-            </div>
-            <span className="inline-flex items-center gap-2 mt-3 text-secondary-light font-medium text-sm">
+            <span className="inline-flex items-center gap-1.5 text-secondary-light font-medium text-xs">
               {t("view_full_details")}
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </span>
           </div>
         </div>
-        <div className="p-6">
-          <h3 className="text-xl font-semibold text-foreground">
+        <div className="p-4 border-t border-border/50">
+          <h3 className="text-base font-semibold text-foreground leading-tight">
             {project.title}
           </h3>
-          <div className="flex items-center gap-4 text-muted text-sm mt-2">
-            <span className="flex items-center gap-1">
-              <MapPin className="h-4 w-4" />
-              {project.location}
-            </span>
-            <span className="flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
-              {project.year}
-            </span>
-          </div>
         </div>
       </button>
     </Card>

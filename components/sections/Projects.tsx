@@ -16,7 +16,7 @@ type Project = {
   id: number;
   image: string;
   category: string;
-  title: string;
+  name: string;
 };
 
 const projects: Project[] = [
@@ -24,19 +24,19 @@ const projects: Project[] = [
     id: 1,
     image: cop29Image.src,
     category: "International",
-    title: "COP29",
+    name: "COP29",
   },
   {
     id: 2,
     image: zeferImage.src,
     category: "Commercial",
-    title: "PMD PROJECTS",
+    name: "Zəfər muzeyi",
   },
   {
     id: 3,
     image: toplanImage.src,
     category: "Construction",
-    title: "TOPLAN",
+    name: "Toplan",
   },
 ];
 
@@ -72,14 +72,14 @@ export function Projects(): ReactNode {
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={t("title_with_format", { name: project.name })}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-foreground">
-                    {project.title}
+                    {t("title_with_format", { name: project.name })}
                   </h3>
                 </div>
               </Card>

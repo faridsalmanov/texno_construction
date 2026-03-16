@@ -179,6 +179,7 @@
   },
   "projects": {
     "title": "Layihələrimiz",
+    "title_with_format": "{name} ilə layihəmiz",
     "subtitle": "Uğurla həyata keçirdiyimiz layihələrdən nümunələr",
     "view_all": "Bütün Layihələri Gör",
     "view_details": "Ətraflı Bax",
@@ -199,6 +200,9 @@
       "media_center": "Film çəkilişi üçün çəkiliş məkanlarının çertyojunun hazırlanması, çəkiliş meydançalarının konstruksiya ilə qurulması və elektrik xətlərinin çəkilməsi işlərinin görülməsi.",
       "olive_garden": "Tingilər üçün hazırlanmış reykaların təmin edilməsi."
     },
+    "names": {
+      "absheron_olive_garden": "Absheron Olive Garden"
+    },
     "categories": {
       "international": "Beynəlxalq",
       "commercial": "Kommersiya",
@@ -218,7 +222,7 @@
         "id": 2,
         "image": "pmd",
         "category": "Kommersiya",
-        "title": "PMD PROJECTS",
+        "title": "Zəfər muzeyi",
         "location": "Bakı",
         "year": "2024",
         "description": "Peşəkar tikinti-quraşdırma layihəsi"
@@ -227,7 +231,7 @@
         "id": 3,
         "image": "toplan",
         "category": "Tikinti",
-        "title": "TOPLAN",
+        "title": "Toplan",
         "location": "Bakı",
         "year": "2024",
         "description": "Tikinti-quraşdırma layihəsi"

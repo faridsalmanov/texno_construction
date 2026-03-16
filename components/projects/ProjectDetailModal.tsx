@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useCallback, useState } from "react";
-import { X, MapPin, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ReactNode } from "react";
 import type { ProjectCardData } from "./ProjectCard";
@@ -112,6 +112,21 @@ export function ProjectDetailModal({
                 >
                   <ChevronRight className="h-6 w-6 text-foreground" />
                 </button>
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                  {galleryImages.map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setSelectedIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === selectedIndex
+                          ? "bg-primary"
+                          : "bg-white/60 hover:bg-white/80"
+                      }`}
+                      aria-label={`View image ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </>
             )}
           </div>
@@ -121,18 +136,9 @@ export function ProjectDetailModal({
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               {project.title}
             </h2>
-            <div className="flex flex-wrap items-center gap-4 text-muted text-sm mb-6">
-              <span className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                {project.location}
-              </span>
-              <span className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                {project.year}
-              </span>
-            </div>
+            <div className="w-12 h-1 rounded-full bg-secondary mb-6" />
             <div className="prose prose-slate max-w-none">
-              <p className="text-muted leading-relaxed">
+              <p className="text-muted leading-relaxed text-base">
                 {project.extendedDescription ?? project.description}
               </p>
             </div>

@@ -179,10 +179,14 @@
   },
   "projects": {
     "title": "Наши Проекты",
+    "title_with_format": "Наш проект с {name}",
     "subtitle": "Примеры наших успешно реализованных проектов",
     "view_all": "Все Проекты",
     "view_details": "Подробнее",
     "view_full_details": "Подробная информация",
+    "names": {
+      "absheron_olive_garden": "Оливковый сад Абшерона"
+    },
     "categories": {
       "international": "Международный",
       "commercial": "Коммерческий",
