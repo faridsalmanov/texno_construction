@@ -25,7 +25,9 @@ import oliveImage from "@/lib/assets/projects/olive.jpeg";
 import olivegardenImage from "@/lib/assets/projects/olivegarden.png";
 import bakuoliveImage from "@/lib/assets/projects/bakuolive.png";
 
-function useProjects(t: (key: string) => string): ProjectCardData[] {
+type TWithValues = (key: string, values?: Record<string, string>) => string;
+
+function useProjects(t: TWithValues): ProjectCardData[] {
   return useMemo(
     () => [
       {
@@ -105,7 +107,7 @@ function useProjects(t: (key: string) => string): ProjectCardData[] {
 
 export default function ProjectsPage(): ReactNode {
   const t = useTranslations("projects");
-  const projects = useProjects(t);
+  const projects = useProjects(t as TWithValues);
   const [selectedProject, setSelectedProject] =
     useState<ProjectCardData | null>(null);
 

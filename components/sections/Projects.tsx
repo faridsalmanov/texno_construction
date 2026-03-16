@@ -72,14 +72,14 @@ export function Projects(): ReactNode {
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img
                     src={project.image}
-                    alt={t("title_with_format", { name: project.name })}
+                    alt={(t as (key: string, values?: Record<string, string>) => string)("title_with_format", { name: project.name })}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-foreground">
-                    {t("title_with_format", { name: project.name })}
+                    {(t as (key: string, values?: Record<string, string>) => string)("title_with_format", { name: project.name })}
                   </h3>
                 </div>
               </Card>
