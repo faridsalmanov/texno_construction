@@ -13,11 +13,17 @@ const localeLabels: Record<Locale, string> = {
   ru: "RUS",
 };
 
+const locales = Object.keys(localeLabels) as Locale[];
+
 type LanguageSwitcherProps = {
   isLight?: boolean;
+  variant?: "dropdown" | "compact";
 };
 
-export function LanguageSwitcher({ isLight = false }: LanguageSwitcherProps): ReactNode {
+export function LanguageSwitcher({
+  isLight = false,
+  variant = "dropdown",
+}: LanguageSwitcherProps): ReactNode {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
@@ -40,6 +46,37 @@ export function LanguageSwitcher({ isLight = false }: LanguageSwitcherProps): Re
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  /* Compact variant: horizontal segmented control for mobile */
+  if (variant === "compact") {
+    return (
+      <div
+        className="flex rounded-lg overflow-hidden border border-white/40 bg-white/5 backdrop-blur-sm"
+        role="group"
+        aria-label="Select language"
+      >
+        {locales.map((loc) => {
+          const isActive = locale === loc;
+          return (
+            <button
+              key={loc}
+              type="button"
+              onClick={() => handleLocaleChange(loc)}
+              className={`flex-1 min-w-0 py-2.5 px-3 text-sm font-semibold transition-all ${
+                isActive
+                  ? "bg-secondary text-white"
+                  : "text-white/90 hover:bg-white/10 hover:text-white"
+              }`}
+              aria-pressed={isActive}
+            >
+              {localeLabels[loc]}
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+
+  /* Dropdown variant: desktop */
   const buttonClass = isLight
     ? "text-white border-white/60 hover:bg-white/10 hover:border-white"
     : "text-foreground border-border hover:bg-card hover:border-primary/30";
@@ -65,7 +102,7 @@ export function LanguageSwitcher({ isLight = false }: LanguageSwitcherProps): Re
           role="listbox"
           className="absolute right-0 top-full mt-2 min-w-[70px] bg-white rounded-lg shadow-lg border border-border py-1 z-50"
         >
-          {(Object.keys(localeLabels) as Locale[]).map((loc) => (
+          {locales.map((loc) => (
             <li key={loc} role="option" aria-selected={locale === loc}>
               <button
                 type="button"

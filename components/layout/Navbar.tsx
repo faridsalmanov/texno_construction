@@ -70,13 +70,28 @@ export function Navbar({ isTransparent = false }: NavbarProps): ReactNode {
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
+        {isOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - full-screen overlay with transparent backdrop */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white shadow-lg md:hidden z-50 max-h-[calc(100vh-4rem)] overflow-y-auto">
-          <nav className="flex flex-col p-4 gap-1">
+        <div
+          className="fixed inset-0 z-[60] md:hidden bg-black/50 backdrop-blur-md"
+          onClick={closeMenu}
+          aria-hidden="true"
+        >
+          <button
+            type="button"
+            onClick={closeMenu}
+            className="absolute top-6 right-6 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            aria-label="Close menu"
+          >
+            <X size={22} strokeWidth={2.5} />
+          </button>
+          <nav
+            className="fixed inset-0 flex flex-col items-center justify-center gap-8 p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
             {navItems.map((item) => {
               const isActive =
                 pathname === item.href ||
@@ -86,8 +101,8 @@ export function Navbar({ isTransparent = false }: NavbarProps): ReactNode {
                   key={item.href}
                   href={item.href}
                   onClick={closeMenu}
-                  className={`py-3 px-4 font-medium transition-colors hover:bg-card rounded-lg ${
-                    isActive ? "text-secondary" : "text-foreground"
+                  className={`text-xl md:text-2xl font-medium transition-colors hover:text-secondary ${
+                    isActive ? "text-secondary" : "text-white"
                   }`}
                 >
                   {t(item.labelKey)}
@@ -95,8 +110,8 @@ export function Navbar({ isTransparent = false }: NavbarProps): ReactNode {
               );
             })}
 
-            <div className="mt-4 pt-4 border-t border-border">
-              <LanguageSwitcher />
+            <div className="mt-8 pt-8 border-t border-white/30 w-full max-w-[180px]">
+              <LanguageSwitcher isLight variant="compact" />
             </div>
           </nav>
         </div>

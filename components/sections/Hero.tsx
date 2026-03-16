@@ -36,57 +36,91 @@ export function Hero(): ReactNode {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="flex flex-col"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               {t("title")}
             </h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-xl">
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-6 max-w-xl">
               {t("subtitle")}
             </p>
+
+            {/* Stats Cards - above buttons on mobile, hidden on desktop (shown in right column) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-8 lg:hidden"
+            >
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                  <p className="text-3xl lg:text-4xl font-bold text-secondary">11+</p>
+                  <p className="text-white/80 text-sm lg:text-base">{t("stats_years")}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                  <p className="text-3xl lg:text-4xl font-bold text-secondary">COP29</p>
+                  <p className="text-white/80 text-sm lg:text-base">{t("stats_projects")}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                  <p className="text-3xl lg:text-4xl font-bold text-secondary">EL-425</p>
+                  <p className="text-white/80 text-sm lg:text-base">{t("stats_license")}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
+                  <p className="text-3xl lg:text-4xl font-bold text-secondary">2013</p>
+                  <p className="text-white/80 text-sm lg:text-base">{t("stats_founded")}</p>
+                </div>
+              </div>
+            </motion.div>
+
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <Button href="/contact" variant="secondary" size="lg">
                 {t("cta")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button href="/projects" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button
+                href="/projects"
+                variant="outline"
+                size="lg"
+                className="hidden md:inline-flex border-white text-white hover:bg-white hover:text-primary"
+              >
                 <Play className="mr-2 h-5 w-5" />
                 {t("secondary_cta")}
               </Button>
             </div>
           </motion.div>
 
+          {/* Stats Cards - desktop only, right column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-10 lg:mt-0"
+            className="hidden lg:block"
           >
-            {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md lg:max-w-none">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
-                <p className="text-3xl lg:text-4xl font-bold text-secondary">11+</p>
-                <p className="text-white/80 text-sm lg:text-base">{t("stats_years")}</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
+                <p className="text-4xl font-bold text-secondary">11+</p>
+                <p className="text-white/80">{t("stats_years")}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
-                <p className="text-3xl lg:text-4xl font-bold text-secondary">COP29</p>
-                <p className="text-white/80 text-sm lg:text-base">{t("stats_projects")}</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
+                <p className="text-4xl font-bold text-secondary">COP29</p>
+                <p className="text-white/80">{t("stats_projects")}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
-                <p className="text-3xl lg:text-4xl font-bold text-secondary">EL-425</p>
-                <p className="text-white/80 text-sm lg:text-base">{t("stats_license")}</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
+                <p className="text-4xl font-bold text-secondary">EL-425</p>
+                <p className="text-white/80">{t("stats_license")}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
-                <p className="text-3xl lg:text-4xl font-bold text-secondary">2013</p>
-                <p className="text-white/80 text-sm lg:text-base">{t("stats_founded")}</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
+                <p className="text-4xl font-bold text-secondary">2013</p>
+                <p className="text-white/80">{t("stats_founded")}</p>
               </div>
             </div>
           </motion.div>
         </div>
       </Container>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - hidden on small screens */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

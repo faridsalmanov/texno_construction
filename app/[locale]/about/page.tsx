@@ -69,7 +69,9 @@ export default function AboutPage(): ReactNode {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {features.map((item, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-secondary" />
+                    <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                      <CheckCircle className="h-5 w-5 text-secondary" />
+                    </span>
                     <span className="text-foreground">{item}</span>
                   </div>
                 ))}
@@ -95,7 +97,7 @@ export default function AboutPage(): ReactNode {
             <p className="text-muted text-lg leading-relaxed mb-6">
               {t("mission_p1")}
             </p>
-            <p className="text-muted text-lg leading-relaxed">
+            <p className="text-muted text-lg leading-relaxed hidden sm:block">
               {t("mission_p2")}
             </p>
           </motion.div>

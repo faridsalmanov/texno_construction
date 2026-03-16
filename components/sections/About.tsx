@@ -6,19 +6,6 @@ import { CheckCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import type { ReactNode } from "react";
 
-const SERVICE_COUNT = 6;
-
-type StatItem = {
-  value: string;
-  key: "services" | "clients" | "team";
-};
-
-const stats: StatItem[] = [
-  { value: `${SERVICE_COUNT}+`, key: "services" },
-  { value: "100+", key: "clients" },
-  { value: "50+", key: "team" },
-];
-
 const featureKeys = [
   "feature_license",
   "feature_team",
@@ -67,28 +54,18 @@ export function About(): ReactNode {
               {t("title")}
             </h2>
             <p className="text-muted text-lg mb-6">{t("subtitle")}</p>
-            <p className="text-muted leading-relaxed mb-8">
+            <p className="text-muted leading-relaxed mb-8 hidden sm:block">
               {t("description")}
             </p>
 
             {/* Features List */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid sm:grid-cols-2 gap-4">
               {featureKeys.map((key, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
+                  <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                    <CheckCircle className="h-5 w-5 text-secondary" />
+                  </span>
                   <span className="text-foreground">{t(key)}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {stats.map((stat) => (
-                <div key={stat.key} className="text-center p-4 bg-card rounded-xl">
-                  <p className="text-2xl md:text-3xl font-bold text-primary">
-                    {stat.value}
-                  </p>
-                  <p className="text-sm text-muted">{t(stat.key)}</p>
                 </div>
               ))}
             </div>
