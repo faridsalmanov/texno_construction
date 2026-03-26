@@ -1,7 +1,7 @@
 import type { ReactNode, ButtonHTMLAttributes } from "react";
 import { Link } from "@/i18n/navigation";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "outline" | "outlineOnDark" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
 type BaseButtonProps = {
@@ -32,6 +32,8 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-secondary text-white hover:bg-secondary-dark shadow-lg hover:shadow-xl",
   outline:
     "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+  outlineOnDark:
+    "border-2 border-white bg-transparent text-white hover:border-white hover:bg-transparent hover:text-white",
   ghost: "text-primary hover:bg-primary/10",
 };
 

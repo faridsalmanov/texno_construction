@@ -47,27 +47,39 @@ export function Hero(): ReactNode {
 
             {/* Stats Cards - above buttons on mobile, hidden on desktop (shown in right column) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{
+                duration: 1.4,
+                delay: 0.15,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mb-8 lg:hidden"
             >
               <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
                   <p className="text-3xl lg:text-4xl font-bold text-secondary">11+</p>
-                  <p className="text-white/80 text-sm lg:text-base">{t("stats_years")}</p>
+                  <p className="text-white/80 text-sm lg:text-base">
+                    {t("stats_years")}
+                  </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
                   <p className="text-3xl lg:text-4xl font-bold text-secondary">COP29</p>
-                  <p className="text-white/80 text-sm lg:text-base">{t("stats_projects")}</p>
+                  <p className="text-white/80 text-sm lg:text-base">
+                    {t("stats_projects")}
+                  </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
                   <p className="text-3xl lg:text-4xl font-bold text-secondary">EL-425</p>
-                  <p className="text-white/80 text-sm lg:text-base">{t("stats_license")}</p>
+                  <p className="text-white/80 text-sm lg:text-base">
+                    {t("stats_license")}
+                  </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 lg:p-6 text-white">
                   <p className="text-3xl lg:text-4xl font-bold text-secondary">2013</p>
-                  <p className="text-white/80 text-sm lg:text-base">{t("stats_founded")}</p>
+                  <p className="text-white/80 text-sm lg:text-base">
+                    {t("stats_founded")}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -79,11 +91,13 @@ export function Hero(): ReactNode {
               </Button>
               <Button
                 href="/projects"
-                variant="outline"
+                variant="outlineOnDark"
                 size="lg"
-                className="hidden md:inline-flex border-white text-white hover:bg-white hover:text-primary"
+                className="group hidden md:inline-flex focus:ring-white/40"
               >
-                <Play className="mr-2 h-5 w-5" />
+                <span className="mr-2 inline-flex transition-transform duration-300 ease-out will-change-transform group-hover:scale-110 group-hover:translate-x-0.5">
+                  <Play className="h-5 w-5" aria-hidden />
+                </span>
                 {t("secondary_cta")}
               </Button>
             </div>
@@ -91,9 +105,13 @@ export function Hero(): ReactNode {
 
           {/* Stats Cards - desktop only, right column */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 1.4,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="hidden lg:block"
           >
             <div className="grid grid-cols-2 gap-4">

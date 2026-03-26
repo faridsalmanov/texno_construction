@@ -69,7 +69,7 @@ export default function ServicesPage(): ReactNode {
   return (
     <main>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 sm:pt-28 sm:pb-18 md:pt-32 md:pb-20 bg-primary">
+      <section className="pt-20 pb-12 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 bg-primary">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

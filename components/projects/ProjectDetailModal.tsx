@@ -30,7 +30,6 @@ export function ProjectDetailModal({
 
   useEffect(() => {
     if (project) {
-      setSelectedIndex(0);
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleEscape);
     }
