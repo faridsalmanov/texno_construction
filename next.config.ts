@@ -8,19 +8,27 @@ const withNextIntl = createNextIntlPlugin();
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 function buildContentSecurityPolicy(isProd: boolean): string {
+  const vercelAnalyticsScriptDev = "https://va.vercel-scripts.com";
+  const vercelAnalyticsConnect = "https://vitals.vercel-insights.com";
+  const scriptSrc = isProd
+    ? "script-src 'self' 'unsafe-inline'"
+    : `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${vercelAnalyticsScriptDev}`;
+  const connectSrc = isProd
+    ? `connect-src 'self' ${vercelAnalyticsConnect}`
+    : `connect-src 'self' ${vercelAnalyticsConnect} ${vercelAnalyticsScriptDev}`;
+
   const directives: string[] = [
     "default-src 'self'",
     // Dev: Turbopack/HMR may rely on eval. Prod: omit unsafe-eval.
-    isProd
-      ? "script-src 'self' 'unsafe-inline'"
-      : "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    // Dev: Vercel Web Analytics loads script from va.vercel-scripts.com.
+    scriptSrc,
     // Inline style={{}} (Hero/CTA backgrounds) + Tailwind output
     "style-src 'self' 'unsafe-inline'",
     // Plain <img> + CSS url() backgrounds from Unsplash; next/image rewrites stay same-origin
     "img-src 'self' data: blob: https://images.unsplash.com",
     "font-src 'self' data:",
-    // Contact form → same-origin /api/contact
-    "connect-src 'self'",
+    // Contact form + Vercel Analytics beacons (prod script is same-origin; ingest is vitals.*)
+    connectSrc,
     "frame-ancestors 'none'",
     "base-uri 'self'",
     // HTML forms only submit to this site
