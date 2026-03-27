@@ -3,6 +3,28 @@
     "title": "TEXNO CONSTRUCTION AZ MMC | Peşəkar Tikinti-Quraşdırma Xidmətləri",
     "description": "Azərbaycanda etibarlı və keyfiyyətli tikinti-quraşdırma xidmətləri. Yaşayış, inzibati, sənaye və kommersiya layihələri üzrə peşəkar."
   },
+  "seo": {
+    "home": {
+      "title": "TEXNO CONSTRUCTION AZ MMC | Peşəkar Tikinti-Quraşdırma Xidmətləri",
+      "description": "Azərbaycanda etibarlı tikinti və quraşdırma. Yaşayış, inzibati, sənaye və kommersiya obyektləri — vaxtında və standartlara uyğun icra."
+    },
+    "about": {
+      "title": "Haqqımızda | TEXNO CONSTRUCTION AZ MMC",
+      "description": "Şirkət profili, təcrübə, dəyərlər və lisenziyalı tikinti fəaliyyəti. TEXNO CONSTRUCTION AZ MMC Azərbaycan üzrə tikinti və təmir işləri görür."
+    },
+    "services": {
+      "title": "Tikinti Xidmətləri | TEXNO CONSTRUCTION AZ MMC",
+      "description": "Əsas tikinti-quraşdırma, təmir və rekonstruksiya, mühəndis kommunikasiyaları, İT təchizatı, materiallar və layihə idarəetməsi Azərbaycanda."
+    },
+    "projects": {
+      "title": "Layihələr və Fəaliyyət | TEXNO CONSTRUCTION AZ MMC",
+      "description": "İctimai, kommersiya və infrastruktur istiqamətli tikinti-quraşdırma layihələrindən seçmələr Azərbaycan üzrə."
+    },
+    "contact": {
+      "title": "Əlaqə | TEXNO CONSTRUCTION AZ MMC",
+      "description": "Bakı və Azərbaycan üzrə tikinti-quraşdırma üçün məsləhət sorğusu. Telefon, e-poçt və təhlükəsiz əlaqə formu."
+    }
+  },
   "nav": {
     "home": "Ana Səhifə",
     "about": "Haqqımızda",

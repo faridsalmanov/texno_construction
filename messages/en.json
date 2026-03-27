@@ -3,6 +3,28 @@
     "title": "TEXNO CONSTRUCTION AZ MMC | Professional Construction Services",
     "description": "Reliable and quality construction and installation services in Azerbaijan. Expert in residential, administrative, industrial and commercial projects."
   },
+  "seo": {
+    "home": {
+      "title": "TEXNO CONSTRUCTION AZ MMC | Professional Construction Services",
+      "description": "Reliable construction and installation in Azerbaijan. Residential, administrative, industrial and commercial projects delivered safely, on time and to standard."
+    },
+    "about": {
+      "title": "About Us | TEXNO CONSTRUCTION AZ MMC",
+      "description": "Company profile, experience, values and licensed construction practice. TEXNO CONSTRUCTION AZ MMC builds and renovates across Azerbaijan."
+    },
+    "services": {
+      "title": "Construction Services | TEXNO CONSTRUCTION AZ MMC",
+      "description": "Main construction and installation, renovation, engineering systems, IT supply, materials logistics and project management in Azerbaijan."
+    },
+    "projects": {
+      "title": "Projects & Activities | TEXNO CONSTRUCTION AZ MMC",
+      "description": "Portfolio of construction and installation work including major public, commercial and infrastructure-related projects in Azerbaijan."
+    },
+    "contact": {
+      "title": "Contact | TEXNO CONSTRUCTION AZ MMC",
+      "description": "Request a consultation for construction and installation in Baku and Azerbaijan. Phone, email and secure contact form."
+    }
+  },
   "nav": {
     "home": "Home",
     "about": "About",

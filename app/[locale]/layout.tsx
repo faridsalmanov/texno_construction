@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { getSiteUrl } from "@/lib/seo/getSiteUrl";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/layout/Header";
@@ -25,36 +26,19 @@ export function generateStaticParams(): { locale: string }[] {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-function getSiteUrl(): URL {
-  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
-  if (explicit) {
-    return new URL(explicit);
-  }
-  if (process.env.VERCEL_URL) {
-    return new URL(`https://${process.env.VERCEL_URL}`);
-  }
-  return new URL("http://localhost:3000");
-}
-
-/** Shown in Slack, iMessage, LinkedIn, etc. Replace with /og-image.png (1200×630) for best results. */
-const LINK_PREVIEW_IMAGE = "/logo.png";
-
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = await getMessages();
-  const metadata = messages.metadata as {
-    title: string;
-    description: string;
-  };
 
   return {
     metadataBase: getSiteUrl(),
-    title: metadata.title,
-    description: metadata.description,
+    icons: {
+      icon: [{ url: "/icon.png", sizes: "48x48", type: "image/png" }],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    },
     keywords: [
       "construction",
       "building",
@@ -63,26 +47,6 @@ export async function generateMetadata({
       "строительство",
       locale === "az" ? "inşaat" : locale === "ru" ? "ремонт" : "contractor",
     ],
-    openGraph: {
-      title: metadata.title,
-      description: metadata.description,
-      locale: locale,
-      type: "website",
-      url: `/${locale}`,
-      siteName: metadata.title,
-      images: [
-        {
-          url: LINK_PREVIEW_IMAGE,
-          alt: metadata.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: metadata.title,
-      description: metadata.description,
-      images: [LINK_PREVIEW_IMAGE],
-    },
   };
 }
 

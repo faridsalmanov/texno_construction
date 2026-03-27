@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
+import { loadSeoMetadata } from "@/lib/seo/loadSeoMetadata";
 import { Mail, Phone, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ContactFormClient } from "@/components/pages/contact/ContactFormClient";
@@ -9,6 +11,16 @@ import type {
 
 const PHONE_VALUE = "+994 51 391 00 00";
 const EMAIL_VALUE = "Texno-construction_az@mail.ru";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return loadSeoMetadata(locale, "contact");
+}
+
 export default async function ContactPage(): Promise<ReactNode> {
   const messages = await getMessages();
   const contactMessages = messages.contact as ContactFormTranslations & {
