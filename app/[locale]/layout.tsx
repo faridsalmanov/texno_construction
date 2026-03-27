@@ -25,6 +25,20 @@ export function generateStaticParams(): { locale: string }[] {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+function getSiteUrl(): URL {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  if (explicit) {
+    return new URL(explicit);
+  }
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`);
+  }
+  return new URL("http://localhost:3000");
+}
+
+/** Shown in Slack, iMessage, LinkedIn, etc. Replace with /og-image.png (1200×630) for best results. */
+const LINK_PREVIEW_IMAGE = "/logo.png";
+
 export async function generateMetadata({
   params,
 }: {
@@ -38,6 +52,7 @@ export async function generateMetadata({
   };
 
   return {
+    metadataBase: getSiteUrl(),
     title: metadata.title,
     description: metadata.description,
     keywords: [
@@ -53,6 +68,20 @@ export async function generateMetadata({
       description: metadata.description,
       locale: locale,
       type: "website",
+      url: `/${locale}`,
+      siteName: metadata.title,
+      images: [
+        {
+          url: LINK_PREVIEW_IMAGE,
+          alt: metadata.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metadata.title,
+      description: metadata.description,
+      images: [LINK_PREVIEW_IMAGE],
     },
   };
 }
