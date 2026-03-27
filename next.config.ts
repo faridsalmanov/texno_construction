@@ -20,14 +20,14 @@ function buildContentSecurityPolicy(isProd: boolean): string {
   const directives: string[] = [
     "default-src 'self'",
     // Dev: Turbopack/HMR may rely on eval. Prod: omit unsafe-eval.
-    // Dev: Vercel Web Analytics loads script from va.vercel-scripts.com.
+    // Dev: Vercel Web Analytics + Speed Insights load from va.vercel-scripts.com.
     scriptSrc,
     // Inline style={{}} (Hero/CTA backgrounds) + Tailwind output
     "style-src 'self' 'unsafe-inline'",
     // Plain <img> + CSS url() backgrounds from Unsplash; next/image rewrites stay same-origin
     "img-src 'self' data: blob: https://images.unsplash.com",
     "font-src 'self' data:",
-    // Contact form + Vercel Analytics beacons (prod script is same-origin; ingest is vitals.*)
+    // Contact form + Vercel Analytics / Speed Insights (prod scripts same-origin; ingest is vitals.*)
     connectSrc,
     "frame-ancestors 'none'",
     "base-uri 'self'",
