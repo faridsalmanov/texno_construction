@@ -19,6 +19,7 @@ export function Header(): ReactNode {
               alt="TEXNO CONSTRUCTION AZ"
               width={96}
               height={96}
+              priority
               className="object-contain drop-shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
             />
           </Link>

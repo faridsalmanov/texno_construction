@@ -1,10 +1,14 @@
- "use client";
+"use client";
 
 import { useState, type FormEvent } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { ReactNode } from "react";
+import { isValidContactEmail } from "@/lib/validation/contactEmail";
+import { isValidContactName } from "@/lib/validation/contactName";
+import { isValidContactMessage } from "@/lib/validation/contactMessage";
+import { isValidAzerbaijanContactPhone } from "@/lib/validation/contactPhone";
 
 export type ContactFormTranslations = {
   form_title: string;
@@ -18,6 +22,11 @@ export type ContactFormTranslations = {
   form_success: string;
   form_error: string;
   form_error_validation: string;
+  form_phone_invalid: string;
+  form_name_invalid: string;
+  form_email_invalid: string;
+  form_rate_limited: string;
+  form_message_invalid: string;
   form_placeholder_name: string;
   form_placeholder_phone: string;
   form_placeholder_email: string;
@@ -37,7 +46,12 @@ type SubmitState =
   | "loading"
   | "success"
   | "error"
-  | "validation_error";
+  | "validation_error"
+  | "phone_invalid"
+  | "name_invalid"
+  | "email_invalid"
+  | "message_invalid"
+  | "rate_limited";
 
 type ContactFormClientProps = {
   translations: ContactFormTranslations;
@@ -52,7 +66,6 @@ export function ContactFormClient({
     e: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
-    setSubmitState("loading");
 
     const form = e.currentTarget;
     const fd = new FormData(form);
@@ -63,6 +76,25 @@ export function ContactFormClient({
       message: String(fd.get("message") ?? "").trim(),
       subject: String(fd.get("subject") ?? "").trim(),
     };
+
+    if (!isValidContactName(body.name)) {
+      setSubmitState("name_invalid");
+      return;
+    }
+    if (!isValidContactEmail(body.email)) {
+      setSubmitState("email_invalid");
+      return;
+    }
+    if (!isValidAzerbaijanContactPhone(body.phone)) {
+      setSubmitState("phone_invalid");
+      return;
+    }
+    if (!isValidContactMessage(body.message)) {
+      setSubmitState("message_invalid");
+      return;
+    }
+
+    setSubmitState("loading");
 
     try {
       const res = await fetch("/api/contact", {
@@ -82,6 +114,11 @@ export function ContactFormClient({
         return;
       }
 
+      if (res.status === 429) {
+        setSubmitState("rate_limited");
+        return;
+      }
+
       setSubmitState("error");
     } catch {
       setSubmitState("error");
@@ -92,7 +129,12 @@ export function ContactFormClient({
     if (
       submitState === "success" ||
       submitState === "error" ||
-      submitState === "validation_error"
+      submitState === "validation_error" ||
+      submitState === "phone_invalid" ||
+      submitState === "name_invalid" ||
+      submitState === "email_invalid" ||
+      submitState === "message_invalid" ||
+      submitState === "rate_limited"
     ) {
       setSubmitState("idle");
     }
@@ -104,6 +146,7 @@ export function ContactFormClient({
         {translations.form_title}
       </h2>
       <form
+        noValidate
         onSubmit={handleSubmit}
         onInput={clearFeedback}
         className="space-y-6"
@@ -120,8 +163,13 @@ export function ContactFormClient({
               type="text"
               id="name"
               name="name"
-              required
-              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+              autoComplete="name"
+              aria-invalid={submitState === "name_invalid"}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${
+                submitState === "name_invalid"
+                  ? "border-red-400 focus:ring-red-200"
+                  : "border-border"
+              }`}
               placeholder={translations.form_placeholder_name}
             />
           </div>
@@ -136,8 +184,14 @@ export function ContactFormClient({
               type="tel"
               id="phone"
               name="phone"
-              required
-              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+              inputMode="tel"
+              autoComplete="tel"
+              aria-invalid={submitState === "phone_invalid"}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${
+                submitState === "phone_invalid"
+                  ? "border-red-400 focus:ring-red-200"
+                  : "border-border"
+              }`}
               placeholder={translations.form_placeholder_phone}
             />
           </div>
@@ -151,11 +205,17 @@ export function ContactFormClient({
             {translations.form_email}
           </label>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
-            required
-            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+            inputMode="email"
+            autoComplete="email"
+            aria-invalid={submitState === "email_invalid"}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${
+              submitState === "email_invalid"
+                ? "border-red-400 focus:ring-red-200"
+                : "border-border"
+            }`}
             placeholder={translations.form_placeholder_email}
           />
         </div>
@@ -203,9 +263,13 @@ export function ContactFormClient({
           <textarea
             id="message"
             name="message"
-            required
             rows={5}
-            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+            aria-invalid={submitState === "message_invalid"}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none ${
+              submitState === "message_invalid"
+                ? "border-red-400 focus:ring-red-200"
+                : "border-border"
+            }`}
             placeholder={translations.form_placeholder_message}
           />
         </div>
@@ -234,6 +298,51 @@ export function ContactFormClient({
             className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
           >
             {translations.form_error_validation}
+          </p>
+        ) : null}
+
+        {submitState === "name_invalid" ? (
+          <p
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          >
+            {translations.form_name_invalid}
+          </p>
+        ) : null}
+
+        {submitState === "email_invalid" ? (
+          <p
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          >
+            {translations.form_email_invalid}
+          </p>
+        ) : null}
+
+        {submitState === "phone_invalid" ? (
+          <p
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          >
+            {translations.form_phone_invalid}
+          </p>
+        ) : null}
+
+        {submitState === "message_invalid" ? (
+          <p
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          >
+            {translations.form_message_invalid}
+          </p>
+        ) : null}
+
+        {submitState === "rate_limited" ? (
+          <p
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          >
+            {translations.form_rate_limited}
           </p>
         ) : null}
 

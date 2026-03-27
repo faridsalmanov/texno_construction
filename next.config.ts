@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  images: {
+    // Cap disk cache for `next/image` optimizer (mitigates unbounded cache growth)
+    maximumDiskCacheSize: 524_288_000, // ~500 MiB
+  },
 };
 
 export default withNextIntl(nextConfig);

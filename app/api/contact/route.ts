@@ -1,6 +1,10 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { isValidContactEmail } from "@/lib/validation/contactEmail";
+import { isValidContactName } from "@/lib/validation/contactName";
+import { isValidContactMessage } from "@/lib/validation/contactMessage";
+import { isValidAzerbaijanContactPhone } from "@/lib/validation/contactPhone";
 
 export const runtime = "nodejs";
 
@@ -21,12 +25,7 @@ const ALLOWED_SUBJECTS = new Set([
   "other",
 ]);
 
-const MAX_NAME = 200;
 const MAX_PHONE = 50;
-const MAX_MESSAGE = 5000;
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 type ContactPayload = {
   name: string;
   email: string;
@@ -84,16 +83,20 @@ function parseContactBody(
   const message = typeof o.message === "string" ? o.message.trim() : "";
   const subject = typeof o.subject === "string" ? o.subject.trim() : "";
 
-  if (!name || name.length > MAX_NAME) {
+  if (!name || !isValidContactName(name)) {
     return { ok: false };
   }
-  if (!email || email.length > 254 || !EMAIL_RE.test(email)) {
+  if (!isValidContactEmail(email)) {
     return { ok: false };
   }
-  if (!phone || phone.length > MAX_PHONE) {
+  if (
+    !phone ||
+    phone.length > MAX_PHONE ||
+    !isValidAzerbaijanContactPhone(phone)
+  ) {
     return { ok: false };
   }
-  if (!message || message.length > MAX_MESSAGE) {
+  if (!isValidContactMessage(message)) {
     return { ok: false };
   }
   if (!ALLOWED_SUBJECTS.has(subject)) {
