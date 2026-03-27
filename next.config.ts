@@ -7,6 +7,31 @@ const withNextIntl = createNextIntlPlugin();
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
+function buildContentSecurityPolicy(isProd: boolean): string {
+  const directives: string[] = [
+    "default-src 'self'",
+    // Dev: Turbopack/HMR may rely on eval. Prod: omit unsafe-eval.
+    isProd
+      ? "script-src 'self' 'unsafe-inline'"
+      : "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    // Inline style={{}} (Hero/CTA backgrounds) + Tailwind output
+    "style-src 'self' 'unsafe-inline'",
+    // Plain <img> + CSS url() backgrounds from Unsplash; next/image rewrites stay same-origin
+    "img-src 'self' data: blob: https://images.unsplash.com",
+    "font-src 'self' data:",
+    // Contact form → same-origin /api/contact
+    "connect-src 'self'",
+    "frame-ancestors 'none'",
+    "base-uri 'self'",
+    // HTML forms only submit to this site
+    "form-action 'self'",
+  ];
+  if (isProd) {
+    directives.push("upgrade-insecure-requests");
+  }
+  return directives.join("; ");
+}
+
 const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
@@ -14,6 +39,43 @@ const nextConfig: NextConfig = {
   images: {
     // Cap disk cache for `next/image` optimizer (mitigates unbounded cache growth)
     maximumDiskCacheSize: 524_288_000, // ~500 MiB
+  },
+  async headers() {
+    const isProd = process.env.NODE_ENV === "production";
+
+    const securityHeaders: { key: string; value: string }[] = [
+      { key: "X-DNS-Prefetch-Control", value: "on" },
+      ...(isProd
+        ? [
+            {
+              key: "Strict-Transport-Security",
+              value: "max-age=63072000; includeSubDomains; preload",
+            },
+          ]
+        : []),
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "X-Frame-Options", value: "DENY" },
+      {
+        key: "Referrer-Policy",
+        value: "strict-origin-when-cross-origin",
+      },
+      {
+        key: "Permissions-Policy",
+        value:
+          "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()",
+      },
+      {
+        key: "Content-Security-Policy",
+        value: buildContentSecurityPolicy(isProd),
+      },
+    ];
+
+    return [
+      {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
+    ];
   },
 };
 
