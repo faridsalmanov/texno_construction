@@ -1,15 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Youtube,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import type { ReactNode } from "react";
 
@@ -25,9 +17,7 @@ export function Footer(): ReactNode {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, label: "LinkedIn" },
     { icon: Instagram, label: "Instagram" },
-    { icon: Youtube, label: "YouTube" },
     { icon: Facebook, label: "Facebook" },
   ];
 

@@ -76,15 +76,21 @@ body::-webkit-scrollbar,
   display: none;
 }
 
-/* Partners infinite scroll */
+/* Partners infinite scroll — translateX(-50%) matches one duplicate track (seamless loop) */
 @keyframes partners-scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-1104px);
+  to {
+    transform: translateX(-50%);
   }
 }
 .animate-partners-scroll {
-  animation: partners-scroll 25s linear infinite;
+  animation: partners-scroll 35s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-partners-scroll {
+    animation: none;
+    transform: none;
+  }
 }
